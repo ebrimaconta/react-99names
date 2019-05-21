@@ -1,0 +1,193 @@
+.container {
+    width: 89%;
+    margin: 0 auto;
+}
+
+.box {
+    width: 82vw;
+    background-repeat: no-repeat;
+    padding-right: 1.5em;
+    margin-bottom: 6vh;
+}
+
+.namesofAllaah-box {
+    min-height: 60vw;
+}
+
+.asmaquran-box {
+    height: 140vh;
+}
+
+.pattern-one {
+    background-image: url(../image/99namesImage.jpg);
+    background-size: cover;
+}
+
+.pattern-two {
+    background-image: url(../image/asmaquran.jpg);
+    padding-top: 10px;
+    background-size: cover;
+}
+
+.heading {
+    font-size: 5vw;
+}
+
+.name-two {
+    font-size: calc(15vw + 1px);
+    float: right;
+    min-width: 281px;
+    text-align: right;
+}
+
+.name-one {
+    font-size: 15vw;
+    float: right;
+    text-align: right;
+}
+
+.asmaquran {
+    margin-left: 0px;
+}
+
+.source {
+    font-size: 7vw;
+    padding: 0 10px;
+}
+
+.container-names {
+    width: 95%;
+}
+
+.circle-box {
+    width: 52%;
+    margin: 0 auto;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.circle-outer {
+    display: inline-block;
+    border: 2px solid #483D8B;
+    border-radius: 25px;
+}
+
+.circle-inactive {
+    display: inline-block;
+    background: #00BFFF;
+    margin: 6px;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+}
+
+@media only screen and (min-width: 650px) {
+    .box {
+        width: 59vw;
+    }
+    .namesofAllaah-box {
+        min-height: 22vh;
+    }
+    .container {
+        width: 61%;
+    }
+    .circle-box {
+        width: 65%;
+    }
+    .name-one {
+        font-size: 11vw;
+    }
+}
+
+@media only screen and (min-height: 350px) {
+    .asmaquran-box {
+        height: 60vh;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 845px) {
+    .box {
+        width: 35vw;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .source {
+        font-size: 2.1vw;
+    }
+    .circle-box {
+        width: 41%;
+    }
+    .namesofAllaah-box {
+        min-height: 22vw;
+    }
+    .box {
+        width: 22vw;
+        float: left;
+        margin-right: 2vw;
+    }
+    .container {
+        width: 85%;
+    }
+    .name-one {
+        font-size: 4vw;
+    }
+    .heading {
+        font-size: 4vw;
+    }
+    .name-two {
+        font-size: 7vw;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .source {
+        font-size: 2vw;
+    }
+    .box {
+        width: 23vw;
+    }
+    .container {
+        width: 85%;
+    }
+    .name-one {
+        font-size: 4vw;
+    }
+    .name-one-smaller {
+        font-size: 3vw;
+    }
+    .heading {
+        font-size: 2vw;
+    }
+    .name-two {
+        font-size: 7vw;
+    }
+    .name-two-smaller {
+        font-size: 4vw;
+    }
+    .circle-box {
+        width: 22%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .box {
+        width: 23vw;
+    }
+    .container {
+        width: 85%;
+    }
+    .name-one {
+        font-size: calc(4vw - 5px);
+    }
+    .name-two {
+        font-size: calc(4vw - 5px);
+    }
+    .name-two-smaller {
+        font-size: 3vw;
+    }
+    .heading {
+        margin-bottom: 5vh;
+    }
+}
