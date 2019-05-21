@@ -1,5 +1,9 @@
 import React from 'react';
-import './App.css';
+import asmaquran from './components/asmaquran/asmaquran';
+import './assets/css/style.css';
+import {BrowserRouter,Route,Link} from "react-router-dom";
+ 
+
 
 function Main() {
     return ( 
@@ -13,15 +17,20 @@ function Main() {
         <a href="pdf/99names_new.pdf">
           99 names of Allaah pdf
           </a>
-             <a href="asmaquran.html">
+            <BrowserRouter>
+            <Link to="/asmaquran">
                 <div class="circle-box">
                     <div class="circle-outer">
                         <div class="circle-inactive">
-                            Asma Ul Quran
+                            
+                          Asma Ul Quran
                         </div>
                     </div>
                 </div>
-        </a>
+                </Link>
+                <Route path="/asmaquran" component={asmaquran} exact/>
+
+         </BrowserRouter>
         </div >
     );
 }
