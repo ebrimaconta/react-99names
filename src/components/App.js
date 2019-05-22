@@ -3,7 +3,9 @@ import asmaquran from './components/asmaquran/asmaquran';
 import './assets/css/style.css';
 import {BrowserRouter,Route,Link} from "react-router-dom";
 
-import namesList from "./containers/99names";
+import namesList from "react-router-dom";
+ 
+
 
 class Main extends Component () {
     render(){
