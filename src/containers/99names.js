@@ -1,5 +1,6 @@
 import React, {Component} from "react";
- 
+import {connect}from "react-redux";
+
 class namesList extends Component{
     rednerList(){
         return this.props.books.map((book)=>
@@ -18,4 +19,9 @@ class namesList extends Component{
     }
 }
 
-export default namesList;
+function mapStateToProps(state){
+    return {
+        books: state.books;
+    }
+}
+export default connect(mapStateToProps)(namesList);
