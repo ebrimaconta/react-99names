@@ -2,11 +2,9 @@ import React, {Component} from "react";
 import {BrowserRouter,Route,Link} from "react-router-dom";
 
 import '../assets/css/style.css';
-import asmaquran from '../containers/asmaquran';
-import NamesList from '../containers/99names';;
-
-
-
+import LinkToAsmaQuran from '../containers/asmaquran';
+import LinkToNames from '../containers/namesNav';
+import NamesList from '../containers/99names';
 
 class Main extends Component  {
     render(){
@@ -18,22 +16,13 @@ class Main extends Component  {
         <br />
             <br /> Below is the pdf. May Allaah azza wal jal accept it
             <br />
-        <Link to="pdf/99names_new.pdf">
+    
+            <BrowserRouter>
+            <Link to="pdf/99names_new.pdf">
           99 names of Allaah pdf
           </Link>
-            <BrowserRouter>
-            <Link to="/asmaquran">
-                <div className="circle-box">
-                    <div className="circle-outer">
-                        <div className="circle-inactive">
-                            
-                          Asma Ul Quran
-                        </div>
-                    </div>
-                </div>
-                </Link>
-                <Route path="/asmaquran" component={asmaquran} exact/>
-
+          <Link to="/asmaquran"> <Route path="/" component={LinkToAsmaQuran} exact/></Link>
+          <Link to="/">  <Route path="/asmaquran" component={LinkToNames} exact/></Link>
          </BrowserRouter>
             <NamesList />
         </div >

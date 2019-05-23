@@ -10,7 +10,7 @@ class NamesList extends Component{
             )
         });
     }
-    reder(){
+    render(){
         return(
             <ul>
                 {this.rednerList()};
