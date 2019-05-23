@@ -1,13 +1,14 @@
 import React, {Component} from "react";
-import asmaquran from './components/asmaquran/asmaquran';
-import './assets/css/style.css';
 import {BrowserRouter,Route,Link} from "react-router-dom";
 
-import namesList from "react-router-dom";
- 
+import '../assets/css/style.css';
+import asmaquran from '../containers/asmaquran';
+import NamesList from '../containers/99names';;
 
 
-class Main extends Component () {
+
+
+class Main extends Component  {
     render(){
     return ( 
         <div className = "App" >
@@ -17,14 +18,14 @@ class Main extends Component () {
         <br />
             <br /> Below is the pdf. May Allaah azza wal jal accept it
             <br />
-        <a href="pdf/99names_new.pdf">
+        <Link to="pdf/99names_new.pdf">
           99 names of Allaah pdf
-          </a>
+          </Link>
             <BrowserRouter>
             <Link to="/asmaquran">
-                <div class="circle-box">
-                    <div class="circle-outer">
-                        <div class="circle-inactive">
+                <div className="circle-box">
+                    <div className="circle-outer">
+                        <div className="circle-inactive">
                             
                           Asma Ul Quran
                         </div>
@@ -34,7 +35,7 @@ class Main extends Component () {
                 <Route path="/asmaquran" component={asmaquran} exact/>
 
          </BrowserRouter>
-            <namesList />
+            <NamesList />
         </div >
     );
 }

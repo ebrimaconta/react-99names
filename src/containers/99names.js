@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {connect}from "react-redux";
 
-class namesList extends Component{
+class NamesList extends Component{
     rednerList(){
-        return this.props.books.map((book)=>
+        return this.props.names.map((name,index)=>
         {
             return(
-                <li key={book.title} >{book.title}</li>
+                <li key={index} >{name.EnglishName}</li>
             )
         });
     }
@@ -21,7 +21,7 @@ class namesList extends Component{
 
 function mapStateToProps(state){
     return {
-        books: state.books;
+        names: state.names
     }
 }
-export default connect(mapStateToProps)(namesList);
+export default connect(mapStateToProps)(NamesList);
