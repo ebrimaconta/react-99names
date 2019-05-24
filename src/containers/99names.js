@@ -6,7 +6,7 @@ class AsmaList extends Component{
         return this.props.names.map((name,index)=>
         {
             return(
-                <li key={index} >{name.EnglishName} {name.ArabicName}  {name.verse}</li>
+                <li key={index} >{name.EnglishName} {name.ArabicName}  {name.meaning}</li>
                  
             )
         });

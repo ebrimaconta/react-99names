@@ -2,8 +2,7 @@ export default function(){
     return  [{
         "EnglishName": "Allaah",
         "ArabicName": "اﻟﻠﻪ  ",
-        "meaning": "",
-        "verse": "“In the name of Allah , the Entirely Merciful, the Especially Merciful [1:1]"
+        "meaning": "In the name of Allah , the Entirely Merciful, the Especially Merciful [1:1]"
 
     },
     {
