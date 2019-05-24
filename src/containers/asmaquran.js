@@ -1,19 +1,27 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
- 
- 
-const LinkToAsmaQuran = () =>{
-    return(
-    <div>
-    <div className="circle-box">
-                    <div className="circle-outer">
-                        <div className="circle-inactive">
-                          Asma Quran(Names of the Quran)
-                        </div>
-                    </div>
-                </div>
-    </div>
-    );
+import React, {Component} from "react";
+import {connect}from "react-redux";
+
+class AsmaList extends Component{
+    rednerList(){
+        return this.props.asmaquran.map((name,index)=>
+        {
+            return(
+                <li key={index} >{name.EnglishName} {name.meaning}  {name.ArabicName}   </li>
+            )
+        });
+    }
+    render(){
+        return(
+            <ul>
+                {this.rednerList()};
+            </ul>
+        )
+    }
 }
 
-export default LinkToAsmaQuran;
+function mapStateToProps(state){
+    return {
+        asmaquran: state.asmaquran
+    }
+}
+export default connect(mapStateToProps)(AsmaList);

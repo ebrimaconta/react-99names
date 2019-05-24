@@ -1,12 +1,13 @@
 import React, {Component} from "react";
 import {connect}from "react-redux";
 
-class NamesList extends Component{
+class AsmaList extends Component{
     rednerList(){
         return this.props.names.map((name,index)=>
         {
             return(
-                <li key={index} >{name.EnglishName}</li>
+                <li key={index} >{name.EnglishName} {name.ArabicName}  {name.verse}</li>
+                 
             )
         });
     }
@@ -24,4 +25,4 @@ function mapStateToProps(state){
         names: state.names
     }
 }
-export default connect(mapStateToProps)(NamesList);
+export default connect(mapStateToProps)(AsmaList);

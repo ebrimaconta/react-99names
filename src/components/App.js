@@ -2,9 +2,9 @@ import React, {Component} from "react";
 import {BrowserRouter,Route,Link} from "react-router-dom";
 
 import '../assets/css/style.css';
-import LinkToAsmaQuran from '../containers/asmaquran';
-import LinkToNames from '../containers/namesNav';
-import NamesList from '../containers/99names';
+import RenderNames from '../components/RednerNames';
+import RenderAsma from '../components/RednerAsma';
+
 
 class Main extends Component  {
     render(){
@@ -19,12 +19,11 @@ class Main extends Component  {
     
             <BrowserRouter>
             <Link to="pdf/99names_new.pdf">
-          99 names of Allaah pdf
-          </Link>
-          <Link to="/asmaquran"> <Route path="/" component={LinkToAsmaQuran} exact/></Link>
-          <Link to="/">  <Route path="/asmaquran" component={LinkToNames} exact/></Link>
-         </BrowserRouter>
-            <NamesList />
+            99 names of Allaah pdf
+            </Link>
+        <Route path="/" component={RenderNames} exact/>
+        <Route path="/asmaquran" component={RenderAsma} exact/>
+            </BrowserRouter>
         </div >
     );
 }
