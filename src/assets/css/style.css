@@ -4,25 +4,34 @@
 }
 
 .box {
-    width: 82vw;
+    width: 90vw;
     background-repeat: no-repeat;
-    padding-right: 1.5em;
     margin-bottom: 6vh;
+    
 }
 
 .namesofAllaah-box {
-    min-height: 60vw;
+    min-height: 75vw;
 }
 
 .asmaquran-box {
     height: 140vh;
 }
 
-.pattern-one {
+/* .pattern-one {
     background-image: url(../image/99namesImage.jpg);
     background-size: cover;
-}
+} */
 
+.pattern-flow{
+    background-image: url(../image/pattern_3.gif);
+    height:50vh;
+    background-repeat: repeat-x;
+}
+.pattern-one {
+     background-color: black;
+     color:#ffd100;
+} 
 .pattern-two {
     background-image: url(../image/asmaquran.jpg);
     padding-top: 10px;
@@ -35,17 +44,20 @@
 
 .name-two {
     font-size: calc(15vw + 1px);
-    float: right;
     min-width: 281px;
-    text-align: right;
+    text-align: center;
 }
 
 .name-one {
     font-size: 15vw;
-    float: right;
-    text-align: right;
+    text-align: center;
 }
 
+.name-three {
+    font-size: 5vw;
+    text-align: center;
+    margin:20px 0px;
+}
 .asmaquran {
     margin-left: 0px;
 }
@@ -56,7 +68,7 @@
 }
 
 .container-names {
-    width: 95%;
+    width: 100%;
 }
 
 .circle-box {
@@ -82,6 +94,9 @@
     color: white;
 }
 
+.padding-one{
+    padding: 0 20px;
+}
 @media only screen and (min-width: 650px) {
     .box {
         width: 59vw;
@@ -123,7 +138,7 @@
         min-height: 22vw;
     }
     .box {
-        width: 22vw;
+        width: 35vw;
         float: left;
         margin-right: 2vw;
     }
@@ -139,6 +154,9 @@
     .name-two {
         font-size: 7vw;
     }
+    .name-three {
+        font-size: 4vw;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -146,7 +164,7 @@
         font-size: 2vw;
     }
     .box {
-        width: 23vw;
+        width: 40vw;
     }
     .container {
         width: 85%;
@@ -163,9 +181,7 @@
     .name-two {
         font-size: 7vw;
     }
-    .name-two-smaller {
-        font-size: 4vw;
-    }
+     
     .circle-box {
         width: 22%;
     }
@@ -173,7 +189,7 @@
 
 @media only screen and (min-width: 1440px) {
     .box {
-        width: 23vw;
+        width: 40vw;
     }
     .container {
         width: 85%;
@@ -184,7 +200,7 @@
     .name-two {
         font-size: calc(4vw - 5px);
     }
-    .name-two-smaller {
+    .name-three {
         font-size: 3vw;
     }
     .heading {

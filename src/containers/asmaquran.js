@@ -33,7 +33,7 @@ class AsmaList extends Component{
                     <h2> {name.meaning}  </h2>  
                     <h2> {name.ArabicName}  </h2>  
                 </div> 
-                <div className="flip-box-back">
+                <div className="flip-box-back padding-one">
                 <h2> {name.EnglishName}  </h2>  
                 <h2> {name.source}  </h2>  
                 <h2> {name.meaning}  </h2>  
