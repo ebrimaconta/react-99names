@@ -37,7 +37,11 @@
     color: white;
     transform: rotateX(180deg);
 }
-
+/* 
 .flip-rotate {
     transform: rotateX(180deg);
-}
+} */
+
+.box:hover .flip-box-inner {
+    transform: rotateX(180deg);
+  }
