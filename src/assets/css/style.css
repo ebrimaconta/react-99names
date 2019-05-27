@@ -27,6 +27,7 @@
     background-image: url(../image/pattern_3.gif);
     height:50vh;
     background-repeat: repeat-x;
+    margin-top:20px;
 }
 .pattern-one {
      background-color: black;
@@ -155,7 +156,8 @@
         font-size: 7vw;
     }
     .name-three {
-        font-size: 4vw;
+        font-size: 3vw;
+        padding:10px 20px;
     }
 }
 
@@ -184,6 +186,9 @@
      
     .circle-box {
         width: 22%;
+    }
+    .pattern-flow{ 
+        height:32vh;
     }
 }
 

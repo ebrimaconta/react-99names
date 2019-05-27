@@ -12,7 +12,7 @@ class AsmaList extends Component{
                     <div className="pattern-flow"></div>
                 <div className="container-names">
                 <div className="name-two">{name.EnglishName} </div> 
-                <div className="name-one"> {name.ArabicName}   </div>
+                <div className="name-one"> {name.ArabicName}  </div>
                 <div className="name-three"> {name.meaning} </div>
                 </div> 
                 <div className="pattern-flow"></div>
