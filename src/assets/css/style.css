@@ -11,7 +11,7 @@
 }
 
 .namesofAllaah-box {
-    min-height: 75vw;
+    min-height: 50vw;
 }
 
 .asmaquran-box {
@@ -97,6 +97,15 @@
 
 .padding-one{
     padding: 0 20px;
+}
+@media only screen and (max-width: 500px )and (min-height: 500px) {
+    .namesofAllaah-box {
+        height: 450px;
+        margin-bottom:50px;
+    }
+    .name-two{
+        margin-top:-180px;
+    }
 }
 @media only screen and (min-width: 650px) {
     .box {
