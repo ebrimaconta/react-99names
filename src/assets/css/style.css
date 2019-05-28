@@ -146,6 +146,7 @@
     }
     .namesofAllaah-box {
         min-height: 22vw;
+        height: 500px;
     }
     .box {
         width: 35vw;
@@ -165,7 +166,7 @@
         font-size: 7vw;
     }
     .name-three {
-        font-size: 3vw;
+        font-size: calc(1vw + 9px);
         padding:10px 20px;
     }
 }
@@ -190,7 +191,7 @@
         font-size: 2vw;
     }
     .name-two {
-        font-size: 7vw;
+        font-size: 6vw;
     }
      
     .circle-box {
