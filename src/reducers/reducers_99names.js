@@ -14,7 +14,7 @@ export default function(){
 
     {
         "EnglishName": "Al-A'laa",
-        "ArabicName": "اﻷﻋْﻠَﻰ ",
+        "ArabicName": "الأعْلَى ",
         "meaning": "The Most Exalted/ High",
     },
     {
@@ -74,9 +74,9 @@ export default function(){
         "meaning": "The Compeller",
     },
     {
-        "EnglishName": "Al-Haafidh ",
+        "EnglishName": "Al-Haafiz ",
         "ArabicName": "اﻟﺤﺎﻓِﻆ ",
-        "meaning": "The Most Exalted/ High",
+        "meaning": "The Protector",
     },
     {
         "EnglishName": "Al-Haseeb",
@@ -84,19 +84,19 @@ export default function(){
         "meaning": "The Sufficient/ Ever-Reckoner",
     },
     {
-        "EnglishName": "Al-Hafeedh",
+        "EnglishName": "Al-Hafeez",
         "ArabicName": "اﻟﺤَﻔِﻴﻆ",
-        "meaning": "The Most Exalted/ High",
+        "meaning": "The Preserver",
     },
     {
-        "EnglishName": "Al-Hafiyy",
+        "EnglishName": "Al-Hafee",
         "ArabicName": "الحَفِي",
-        "meaning": "The Most Exalted/ High",
+        "meaning": "The Benevolent/ Ever-Hospitable",
     },
     {
         "EnglishName": "Al-Haqq",
         "ArabicName": " ٱلْحَقُّ",
-        "meaning": "The Most Exalted/ High",
+        "meaning": "The Truth",
     },
     {
         "EnglishName": "Al-Mubeen",
@@ -216,12 +216,12 @@ export default function(){
     {
         "EnglishName": "Al-`Afuww",
         "ArabicName": "ااﻟﻌﻔﻮ",
-        "meaning": "The Most Exalted/ High",
+        "meaning": "The One Who Pardons Again & Again",
     },
     {
         "EnglishName": "Al-`Aliyy",
-        "ArabicName": "اﻟﻌَﻞِ ﻱ ",
-        "meaning": "The Most Exalted/ High",
+        "ArabicName": "العَلِيّ",
+        "meaning": "The Sublime",
     },
     {
         "EnglishName": "Al-Ghaffaar",
