@@ -2,7 +2,7 @@ export default function(){
     return  [{
         "EnglishName": "Allaah",
         "ArabicName": "اﻟﻠﻪ  ",
-        "meaning": ""
+        "meaning": "God"
 
     },
     {
