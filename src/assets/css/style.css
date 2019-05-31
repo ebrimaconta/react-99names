@@ -31,7 +31,7 @@
 }
 .pattern-one {
     background-image: url(../image/99namesImage_3.jpg);
-     color:blue;
+     color:black;
      background-repeat: repeat;
      padding:40px 0px;
 } 
@@ -225,7 +225,7 @@
         margin-bottom: 5vh;
     }
     .pattern-one {
-         padding:40px 0px;
+         padding:60px 0px;
     } 
     .namesofAllaah-box {
         min-height: 30vw;
