@@ -73,6 +73,7 @@
 
 .container-names {
     width: 100%;
+    padding-top:25px;
 }
 
 .circle-box {
@@ -131,6 +132,11 @@
 @media only screen and (min-height: 350px) {
     .asmaquran-box {
         height: 80vh;
+    }
+}
+@media only screen and (min-width: 425px) {
+    .container-names {
+        padding-top:50px;
     }
 }
 
@@ -202,6 +208,9 @@
     }
     .pattern-flow{ 
         height:32vh;
+    }
+    .container-names {
+        padding-top:10px;
     }
 }
 
