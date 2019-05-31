@@ -30,8 +30,10 @@
     margin-top:20px;
 }
 .pattern-one {
-     background-color: black;
-     color:#ffd100;
+    background-image: url(../image/99namesImage_3.jpg);
+     color:blue;
+     background-repeat: repeat;
+     padding:40px 0px;
 } 
 .pattern-two {
     background-image: url(../image/asmaquran.jpg);
@@ -58,6 +60,7 @@
     font-size: 5vw;
     text-align: center;
     margin:20px 0px;
+    font-weight: 900;
 }
 .asmaquran {
     margin-left: 0px;
@@ -146,7 +149,7 @@
     }
     .namesofAllaah-box {
         min-height: 22vw;
-        height: 500px;
+        height: 212px;
     }
     .box {
         width: 35vw;
@@ -191,7 +194,7 @@
         font-size: 2vw;
     }
     .name-two {
-        font-size: 6vw;
+        font-size: 5vw;
     }
      
     .circle-box {
@@ -204,7 +207,7 @@
 
 @media only screen and (min-width: 1440px) {
     .box {
-        width: 40vw;
+        width: 30vw;
     }
     .container {
         width: 85%;
@@ -220,5 +223,11 @@
     }
     .heading {
         margin-bottom: 5vh;
+    }
+    .pattern-one {
+         padding:40px 0px;
+    } 
+    .namesofAllaah-box {
+        min-height: 30vw;
     }
 }
