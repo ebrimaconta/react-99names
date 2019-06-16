@@ -46,7 +46,7 @@ class AsmaList extends Component{
     }
     render(){
         return(
-            <div className="asmaquran">
+            <div className="content">
                 {this.rednerList()};
             </div>
         )

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {connect}from "react-redux";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import "../assets/css/style.css";
  
 class AsmaList extends Component{
@@ -14,8 +15,7 @@ class AsmaList extends Component{
                 <div className="name-two">{name.EnglishName} </div> 
                 <div className="name-one"> {name.ArabicName}  </div>
                 <div className="name-three"> {name.meaning} </div>
-                </div> 
-               
+                </div>  
                 </div>
                  
             )
@@ -23,7 +23,8 @@ class AsmaList extends Component{
     }
     render(){
         return(
-            <div>
+            <div className="content">
+                  <FontAwesomeIcon onClick={this.props.SortFunc} icon={faCoffee} />
                 {this.rednerList()};
             </div>
         )
@@ -35,4 +36,24 @@ function mapStateToProps(state){
         names: state.names
     }
 }
-export default connect(mapStateToProps)(AsmaList);
+
+function mapDispatchToProps(dispatch){
+    let payload ="asc";
+    return {
+        SortFunc: function() {
+            if(payload === "asc"){
+                payload = "desc";
+                dispatch({type:"Sort",payload})
+            
+            } else if(payload === "desc") {
+                payload = "asc";
+                dispatch({type:"Sort",payload});
+                
+                
+            }
+           
+           
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(AsmaList);

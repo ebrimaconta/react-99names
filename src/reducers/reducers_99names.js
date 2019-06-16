@@ -1,5 +1,4 @@
-export default function(){
-    return  [{
+let store99names =    [{
         "EnglishName": "Allaah",
         "ArabicName": "اﻟﻠﻪ  ",
         "meaning": "God",
@@ -591,4 +590,4 @@ export default function(){
         "verse": ""
     },
 ];
-}
+export default store99names;
