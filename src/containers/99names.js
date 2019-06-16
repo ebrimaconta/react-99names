@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {connect}from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faSort } from '@fortawesome/free-solid-svg-icons';
 import "../assets/css/style.css";
  
 class AsmaList extends Component{
     rednerList(){
-        return this.props.names.map((name,index)=>
+        return this.props.Sort99names.map((name,index)=>
         {
             return(
                 <div className="box pattern-one namesofAllaah-box" key={index} >
@@ -24,7 +24,7 @@ class AsmaList extends Component{
     render(){
         return(
             <div className="content">
-                  <FontAwesomeIcon onClick={this.props.SortFunc} icon={faCoffee} />
+                  <FontAwesomeIcon onClick={this.props.SortFunc} icon={faSort} />
                 {this.rednerList()};
             </div>
         )
@@ -32,8 +32,9 @@ class AsmaList extends Component{
 }
 
 function mapStateToProps(state){
+    console.log(state)
     return {
-        names: state.names
+        Sort99names: state.Sort99names
     }
 }
 
@@ -48,11 +49,7 @@ function mapDispatchToProps(dispatch){
             } else if(payload === "desc") {
                 payload = "asc";
                 dispatch({type:"Sort",payload});
-                
-                
             }
-           
-           
         }
     }
 }

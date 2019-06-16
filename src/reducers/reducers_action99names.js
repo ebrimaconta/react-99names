@@ -7,7 +7,7 @@ export default function action99names(state=intialState, action){
         case "Sort" :
            
          if(action.payload === "asc"){
-         console.log( state.slice().sort(function(a, b) {
+        return state.slice().sort(function(a, b) {
           var nameA = a.EnglishName.toUpperCase();var nameB = b.EnglishName.toUpperCase(); if (nameA < nameB) {
               return 1;
             }
@@ -15,10 +15,10 @@ export default function action99names(state=intialState, action){
               return -1;
             }
             return 0;
-        }))
+        })
        }
            if(action.payload === "desc") {
-            console.log( state.slice().sort(function(a, b) {
+           return state.slice().sort(function(a, b) {
             var nameA = a.EnglishName.toUpperCase();var nameB = b.EnglishName.toUpperCase(); if (nameA < nameB) {
                 return -1;
               }
@@ -28,7 +28,7 @@ export default function action99names(state=intialState, action){
 
               // names must be equal
               return 0;
-          }))
+          })
          }
        
     }
