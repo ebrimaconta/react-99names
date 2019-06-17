@@ -32,7 +32,6 @@ class AsmaList extends Component{
 }
 
 function mapStateToProps(state){
-    console.log(state)
     return {
         Sort99names: state.Sort99names
     }
