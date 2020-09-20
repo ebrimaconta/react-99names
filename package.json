@@ -8,11 +8,12 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "tailwindcss": "^1.8.10"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tailwind build src/assets/css/tailwind.css -o src/dist/style.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

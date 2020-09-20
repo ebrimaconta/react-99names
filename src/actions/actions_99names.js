@@ -1,6 +1,6 @@
-export default function sortArray(names){
+export default function sortArray(names) {
     return {
-       type: "Sort",
-       payload:names
-   }  
+        type: "Sort",
+        payload: names
+    }
 }
