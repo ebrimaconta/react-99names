@@ -1,244 +1,68 @@
 .bg-space {
-    background-image: url("../image/background-space.jpeg");
-  }
-  .bg-space-red {
-    background-image: url("../image/space-red.jpg");
-  }
-  .pattern-one {
-    background-image: url(../image/99namesImage_3.jpg);
-    background-repeat: repeat;
-  }
-  .pattern-two {
-    background-image: url(../image/asmaquran.jpg);
-    padding-top: 10px;
-    background-size: cover;
-  }
-  /* 
-.namesofAllaah-box {
-    min-height: 50vw;
+  background-image: url("../image/background-space.jpeg");
+}
+.bg-space-red {
+  background-image: url("../image/space-red.jpg");
+}
+.pattern-one {
+  background-image: url(../image/99namesImage_3.jpg);
+  background-repeat: repeat;
+}
+.pattern-two {
+  background-image: url(../image/asmaquran.jpg);
+  padding-top: 10px;
+  background-size: cover;
 }
 
-.asmaquran-box {
-    height: 140vh;
+.asmaquran {
+  display: inline-block;
+}
+
+.pattern-one {
+  background-image: url(../image/99namesImage_3.jpg);
+  color: black;
+  background-repeat: repeat;
+  padding: 40px 0px;
+}
+.pattern-two {
+  background-image: url(../image/asmaquran.jpg);
+  padding-top: 10px;
+  background-size: cover;
+}
+
+.asmaquran {
+  margin-left: 0px;
+}
+
+@media only screen and (min-width: 650px) {
+  .box {
+    width: 59vw;
+  }
 }
 
  
-.pattern-flow{
-    height:50vh;
-    background-repeat: repeat-x;
-    margin-top:20px;
-}
-.pattern-one {
-    background-image: url(../image/99namesImage_3.jpg);
-     color:black;
-     background-repeat: repeat;
-     padding:40px 0px;
-} 
-.pattern-two {
-    background-image: url(../image/asmaquran.jpg);
-    padding-top: 10px;
-    background-size: cover;
-}
-
-.heading {
-    font-size: 5vw;
-}
-
-.name-two {
-    font-size: calc(15vw + 1px);
-    min-width: 281px;
-    text-align: center;
-}
-
-.name-one {
-    font-size: 15vw;
-    text-align: center;
-}
-
-.name-three {
-    font-size: 5vw;
-    text-align: center;
-    margin:20px 0px;
-    font-weight: 900;
-}
-.asmaquran {
-    margin-left: 0px;
-}
-
-.source {
-    font-size: 7vw;
-    padding: 0 10px;
-}
-
-.container-names {
-    width: 100%;
-    padding-top:25px;
-}
-
-.circle-box {
-    width: 52%;
-    margin: 0 auto;
-    border-radius: 25px;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.circle-outer {
-    display: inline-block;
-    border: 2px solid #483D8B;
-    border-radius: 25px;
-}
-
-.circle-inactive {
-    display: inline-block;
-    background: #00BFFF;
-    margin: 6px;
-    padding: 10px;
-    border-radius: 25px;
-    color: white;
-}
-
-.padding-one{
-    padding: 0 20px;
-}
-@media only screen and (max-width: 500px )and (min-height: 500px) {
-    .namesofAllaah-box {
-        height: 450px;
-        margin-bottom:100px;
-    }
-    .name-two{
-        margin-top:-180px;
-    }
-    .container-names {
-        padding-top:300px;
-    }
-}
-@media only screen and (min-width: 650px) {
-    .box {
-        width: 59vw;
-    }
-    .namesofAllaah-box {
-        min-height: 22vh;
-    }
-    .container {
-        width: 61%;
-    }
-    .circle-box {
-        width: 65%;
-    }
-    .name-one {
-        font-size: 11vw;
-    }
-}
-
-@media only screen and (min-height: 350px) {
-    .asmaquran-box {
-        height: 80vh;
-    }
-}
-@media only screen and (min-width: 425px) {
-    .container-names {
-        padding-top:50px;
-    }
-}
-
 @media only screen and (min-width: 768px) and (max-width: 845px) {
-    .box {
-        width: 35vw;
-    }
+  .box {
+    width: 35vw;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .source {
-        font-size: 2.1vw;
-    }
-    .circle-box {
-        width: 41%;
-    }
-    .namesofAllaah-box {
-        min-height: 22vw;
-        height: 212px;
-    }
-    .box {
-        width: 35vw;
-        float: left;
-        margin-right: 2vw;
-    }
-    .container {
-        width: 85%;
-    }
-    .name-one {
-        font-size: 4vw;
-    }
-    .heading {
-        font-size: 4vw;
-    }
-    .name-two {
-        font-size: 7vw;
-    }
-    .name-three {
-        font-size: calc(1vw + 9px);
-        padding:10px 20px;
-    }
+  .box {
+    width: 35vw;
+    float: left;
+    margin-right: 2vw;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-    .source {
-        font-size: 2vw;
-    }
-    .box {
-        width: 40vw;
-    }
-    .container {
-        width: 85%;
-    }
-    .name-one {
-        font-size: 4vw;
-    }
-    .name-one-smaller {
-        font-size: 3vw;
-    }
-    .heading {
-        font-size: 2vw;
-    }
-    .name-two {
-        font-size: 5vw;
-    }
-     
-    .circle-box {
-        width: 22%;
-    }
-    .pattern-flow{ 
-        height:32vh;
-    }
-    .container-names {
-        padding-top:10px;
-    }
+  .box {
+    width: 40vw;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-    .box {
-        width: 30vw;
-    }
-    .container {
-        width: 85%;
-    }
-    .name-one {
-        font-size: calc(4vw - 5px);
-    }
-    .name-two {
-        font-size: calc(4vw - 5px);
-    }
-    .name-three {
-        font-size: 3vw;
-    }
-    .heading {
-        margin-bottom: 5vh;
-    }
-    .pattern-one {
-         padding:60px 0px;
-    } 
-    .namesofAllaah-box {
-        min-height: 30vw;
-    }
-} */
+  .box {
+    width: 30vw;
+  }
+}

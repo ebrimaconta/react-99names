@@ -8,14 +8,14 @@ class AsmaList extends Component {
   rednerList() {
     return this.props.asmaquran.map((name, index) => {
       return (
-        <div key={index} className="box asmaquran-box">
+        <div key={index} className="flex flex-col items-center py-10 box h-64">
           <div className="flip-box-inner">
-            <div className="flip-box-front pattern-two">
-              <h2>{name.EnglishName} </h2>
-              <h2> {name.meaning} </h2>
-              <h2> {name.ArabicName} </h2>
+            <div className="flip-box-front pattern-two text-2xl">
+              <h2 className="pt-7">{name.EnglishName} </h2>
+              <h2 className="pt-5"> {name.meaning} </h2>
+              <h2 className="pt-2"> {name.ArabicName} </h2>
             </div>
-            <div className="flip-box-back padding-one">
+            <div className="flip-box-back padding-one px-10">
               <h2> {name.EnglishName} </h2>
               <h2> {name.source} </h2>
               <h2> {name.meaning} </h2>
@@ -26,7 +26,11 @@ class AsmaList extends Component {
     });
   }
   render() {
-    return <div className="flex w-full flex-wrap justify-center  my-10">{this.rednerList()};</div>;
+    return (
+      <div className="lg:flex w-full text-center asmaquran lg:flex-wrap justify-center  my-10">
+        {this.rednerList()};
+      </div>
+    );
   }
 }
 
