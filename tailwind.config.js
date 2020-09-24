@@ -6,7 +6,7 @@ module.exports = {
   purge: [],
   theme: {
     height: {
-      box : '18rem'
+      box : '24rem'
             }
   },
   variants: {},

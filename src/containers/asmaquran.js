@@ -19,7 +19,7 @@ class AsmaList extends Component {
             <div className="flip-box-back padding-one px-10 py-7 lg:py-1">
               <h2 className="pt-8 lg:pt-1 text-2xl"> {name.EnglishName} </h2>
               <h2> {name.source} </h2>
-              <h2 className="pb-10"> {name.meaning} </h2>
+              <h2 className="pb-10 text-2xl py-3"> {name.meaning} </h2>
             </div>
           </div>
         </div>

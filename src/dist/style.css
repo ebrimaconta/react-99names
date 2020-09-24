@@ -10371,7 +10371,7 @@ video {
 }
 
 .h-box {
-  height: 18rem;
+  height: 24rem;
 }
 
 .text-xs {
@@ -33387,7 +33387,7 @@ video {
   }
 
   .sm\:h-box {
-    height: 18rem;
+    height: 24rem;
   }
 
   .sm\:text-xs {
@@ -56330,7 +56330,7 @@ video {
   }
 
   .md\:h-box {
-    height: 18rem;
+    height: 24rem;
   }
 
   .md\:text-xs {
@@ -79273,7 +79273,7 @@ video {
   }
 
   .lg\:h-box {
-    height: 18rem;
+    height: 24rem;
   }
 
   .lg\:text-xs {
@@ -102216,7 +102216,7 @@ video {
   }
 
   .xl\:h-box {
-    height: 18rem;
+    height: 24rem;
   }
 
   .xl\:text-xs {
