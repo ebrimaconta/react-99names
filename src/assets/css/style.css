@@ -1,8 +1,9 @@
-#root {
-    width: 89%;
-    margin: 0 auto;
+.bg-space {
+    background-image: url("../image/background-space.jpeg");
 }
-
+.bg-space-red {
+    background-image: url("../image/space-red.jpg");
+}
 .box {
     width: 88vw;
     background-repeat: no-repeat;

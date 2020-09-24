@@ -2,28 +2,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-import NamesList from '../containers/99names';
-
-
-
+import NamesList from "../containers/99names";
 
 const RenderNames = () => {
-    return (
-        <div>
-            <Link to="/asmaquran">
-                <div className="circle-box">
-                    <div className="circle-outer">
-                        <div className="circle-inactive">
-                            Asma Quran (Names of the  Quran)
-                        </div>
-                    </div>
-                </div>
-            </Link>
-
-            <NamesList />
+  return (
+    <div>
+      <Link to="/asmaquran">
+        <div className="bg-space-red text-center text-white h-20 flex items-center justify-center">
+          Asma Quran (Names of the Quran)
         </div>
-    );
-}
+      </Link>
+
+      <NamesList />
+    </div>
+  );
+};
 
 export default RenderNames;

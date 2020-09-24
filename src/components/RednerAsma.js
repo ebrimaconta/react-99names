@@ -8,7 +8,7 @@ const RenderAsma = () => {
     return (
         <div>
             <Link to="/">
-                <div className="circle-box">
+                <div className="bg-space-red">
                     <div className="circle-outer">
                         <div className="circle-inactive">
                             99 names of Allaah
