@@ -1,10 +1,13 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, {useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 import AsmaList from "../containers/asmaquran";
 
-const RenderAsma = () => {
+function RenderAsma() {
+  useEffect(() => {
+    document.title = "Asma Quran - Names Of The Quran";
+  });
   return (
     <div>
         <div>

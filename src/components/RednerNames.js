@@ -1,11 +1,14 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, {useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 import NamesList from "../containers/99names";
 import Pdf from "../pdf/99-names-new.pdf";
 
-const RenderNames = () => {
+function RenderNames() {
+  useEffect(() => {
+    document.title = "99 Names Of Allaah Azza Wa Jal By Shaykh Ibn Uthymeen";
+  });
   return (
     <div>
       <div>
