@@ -16,7 +16,7 @@ const RenderNames = () => {
           <div className="author capitalize text-2xl   animate__animated animate__fadeInUp animate__slower">
             Shaykh Ibn Uthymeen
           </div>
-          <a href={Pdf} target="_blank">
+          <a href={Pdf} rel="noopener noreferrer" target="_blank">
             <div className=" animate__animated animate__fadeInLeft  py-3 bg-black px-5 my-10">
               99 names of Allaah PDF
             </div>

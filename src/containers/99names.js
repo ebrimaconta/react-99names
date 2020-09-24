@@ -8,7 +8,7 @@ class AsmaList extends Component {
   rednerList() {
     return this.props.Sort99names.map((name, index) => {
       return (
-        <div className=" pattern-one m-5  w-full md:w-1/3 " key={index}>
+        <div className=" pattern-one m-5 pt-10 w-full md:w-1/3 " key={index}>
           <div className="flex flex-col items-center py-10">
             <div className="text-5xl">{name.EnglishName} </div>
             <div className="text-4xl"> {name.ArabicName} </div>

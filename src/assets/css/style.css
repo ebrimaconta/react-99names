@@ -23,18 +23,13 @@
 .pattern-one {
   background-image: url(../image/99namesImage_3.jpg);
   color: black;
-  background-repeat: repeat;
-  padding: 40px 0px;
+  background-repeat: repeat
 }
 .pattern-two {
   background-image: url(../image/asmaquran.jpg);
-  padding-top: 10px;
   background-size: cover;
 }
 
-.asmaquran {
-  margin-left: 0px;
-}
 
 @media only screen and (min-width: 650px) {
   .box {
@@ -52,7 +47,6 @@
 @media only screen and (min-width: 768px) {
   .box {
     width: 35vw;
-    float: left;
     margin-right: 2vw;
   }
 }
