@@ -7,7 +7,7 @@ import Pdf from "../pdf/99-names-new.pdf";
 
 function RenderNames() {
   useEffect(() => {
-    document.title = "99 Names Of Allaah Azza Wa Jal By Shaykh Ibn Uthymeen";
+    document.title = "99 Names Of Allaah Azza Wa Jal By Shaykh Ibn Uthymeen ";
   });
   return (
     <div>
