@@ -5,7 +5,9 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    height: {
+      box : '18rem'
+            }
   },
   variants: {},
   plugins: [],
