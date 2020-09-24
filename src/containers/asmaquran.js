@@ -9,8 +9,8 @@ class AsmaList extends Component {
   rednerList() {
     return this.props.asmaquran.map((name, index) => {
       return (
-        <div key={index} className="flex flex-col items-center py-10 box h-box">
-          <div className="flip-box-inner">
+        <div key={index} className="flex flex-col items-center py-10 box h-box ">
+          <div className="flip-box-inner ">
             <div className="flip-box-front pattern-two text-2xl">
               <h2 className="pt-8">{name.EnglishName} </h2>
               <h2 className="pt-5"> {name.meaning} </h2>
