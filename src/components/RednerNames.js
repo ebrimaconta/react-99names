@@ -16,7 +16,8 @@ const RenderNames = () => {
           Shaykh Ibn Uthymeen
         </div>
         <div className=" animate__animated animate__fadeInLeft  py-3 bg-black px-5 my-10">
-          99 names of Allaah PDF
+          <a href=""></a>
+             99 names of Allaah PDF
         </div>
       </header>
     </div>
