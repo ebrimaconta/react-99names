@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "node bin/react-scripts.js build",
+    "build": "react-scripts build ",
     "tailwind": "tailwind build src/assets/css/tailwind.css -o src/dist/style.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
