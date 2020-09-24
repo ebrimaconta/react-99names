@@ -1,16 +1,19 @@
 .bg-space {
     background-image: url("../image/background-space.jpeg");
-}
-.bg-space-red {
+  }
+  .bg-space-red {
     background-image: url("../image/space-red.jpg");
-}
-.box {
-    width: 88vw;
-    background-repeat: no-repeat;
-    margin-bottom: 6vh;
-    
-}
-
+  }
+  .pattern-one {
+    background-image: url(../image/99namesImage_3.jpg);
+    background-repeat: repeat;
+  }
+  .pattern-two {
+    background-image: url(../image/asmaquran.jpg);
+    padding-top: 10px;
+    background-size: cover;
+  }
+  /* 
 .namesofAllaah-box {
     min-height: 50vw;
 }
@@ -19,13 +22,8 @@
     height: 140vh;
 }
 
-/* .pattern-one {
-    background-image: url(../image/99namesImage.jpg);
-    background-size: cover;
-} */
-
+ 
 .pattern-flow{
-    background-image: url(../image/pattern_3.gif);
     height:50vh;
     background-repeat: repeat-x;
     margin-top:20px;
@@ -243,4 +241,4 @@
     .namesofAllaah-box {
         min-height: 30vw;
     }
-}
+} */

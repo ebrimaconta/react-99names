@@ -11,13 +11,13 @@ class Main extends Component {
     return (
       <div className="App">
         <header className="bg-space text-white  flex flex-col items-center h-40 content-center justify-center">
-          <div className="title-99-names">99 Names of Allaah</div>
-          <div className="author">Shaykh Ibn Uthymeen </div>
+          <div className="title-99-names capitalize">99 Names Of Allaah</div>
+          <div className="author capitalize " >Shaykh Ibn Uthymeen </div>
           <BrowserRouter>
             <Link to="./pdf/99-names-new.pdf">99 names of Allaah PDF</Link>
           </BrowserRouter>
         </header>
-
+           
         <BrowserRouter>
           <Route path="/" component={RenderNames} exact />
           <Route path="/asmaquran" component={RenderAsma} exact />
