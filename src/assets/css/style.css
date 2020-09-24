@@ -1,8 +1,10 @@
 .bg-space {
   background-image: url("../image/background-space.jpeg");
+  background-size: cover;
 }
 .bg-space-red {
   background-image: url("../image/space-red.jpg");
+  background-size: cover;
 }
 .pattern-one {
   background-image: url(../image/99namesImage_3.jpg);
