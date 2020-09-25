@@ -13,7 +13,7 @@ import NotFound from "../components/NotFound";
 class Main extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App ">
         <BrowserRouter>
         <Switch>
           <Route path="/" component={RenderNames} exact />

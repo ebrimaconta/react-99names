@@ -1,4 +1,4 @@
-.bg-space {
+.bg-space-blue {
   background-image: url("../image/background-space.jpeg");
   background-size: cover;
 }
@@ -10,6 +10,10 @@
 .bg-space-green {
   background-image: url("../image/space-green.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; 
 }
 .pattern-one {
   background-image: url(../image/99namesImage_3.jpg);

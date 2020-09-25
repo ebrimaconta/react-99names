@@ -7,7 +7,11 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        box: "24rem",
+        "lg-xs": "24rem",
+      },
+      width: {
+        "lg-xs": "24rem",
+        "lg-sm": "29rem",
       },
     },
   },

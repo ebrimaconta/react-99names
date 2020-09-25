@@ -11,7 +11,7 @@ class AsmaList extends Component {
       return (
         <div
           key={index}
-          className="flex flex-col items-center py-10 box h-box "
+          className="flex flex-col items-center py-10 box h-lg-xs "
         >
           <div className="flip-box-inner ">
             <div className="flip-box-front pattern-two text-2xl">
