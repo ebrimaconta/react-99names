@@ -7,6 +7,8 @@ import "../dist/style.css";
 
 import RenderNames from "../components/RednerNames";
 import RenderAsma from "../components/RednerAsma";
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-139972905-1');
 
 class Main extends Component {
   render() {
@@ -16,6 +18,7 @@ class Main extends Component {
           <Route path="/" component={RenderNames} exact />
           <Route path="/asmaquran" component={RenderAsma} exact />
         </BrowserRouter>
+        <div>
       </div>
     );
   }
