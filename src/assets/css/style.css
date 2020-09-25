@@ -6,6 +6,11 @@
   background-image: url("../image/space-red.jpg");
   background-size: cover;
 }
+
+.bg-space-green {
+  background-image: url("../image/space-green.jpg");
+  background-size: cover;
+}
 .pattern-one {
   background-image: url(../image/99namesImage_3.jpg);
   background-repeat: repeat;
@@ -15,7 +20,9 @@
   padding-top: 10px;
   background-size: cover;
 }
-
+.contents {
+  display:contents;
+}
 .asmaquran {
   display: inline-block;
 }

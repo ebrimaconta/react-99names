@@ -5,10 +5,12 @@ module.exports = {
   },
   purge: [],
   theme: {
-    height: {
-      box : '24rem'
-            }
+    extend: {
+      height: {
+        box: "24rem",
+      },
+    },
   },
   variants: {},
   plugins: [],
-}
+};

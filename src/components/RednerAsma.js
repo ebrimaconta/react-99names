@@ -6,11 +6,10 @@ import AsmaList from "../containers/asmaquran";
 
 function RenderAsma() {
   useEffect(() => {
-    document.title = "Asma Quran - Names Of The Quran";
+    document.title = "SubhanAllaah 404 errors!!! Where are you trying to go?";
   });
   return (
-    <div>
-        <div>
+    <>
      <header className="bg-space-red text-white  flex flex-col items-center h-40 content-center justify-center">
           <div className="title-99-names capitalize text-3xl pt-10 animate__animated animate__fadeInDownBig ">
             Asma quran 
@@ -19,14 +18,13 @@ function RenderAsma() {
             Names of the quran 
           </div>
         </header>
-    </div>
-      <Link to="/">
-        <div className="bg-space text-center text-white h-20 flex items-center justify-center  py-5">
+      <Link to="/" className="">
+        <div className="bg-space text-center text-white h-20 flex items-center justify-center  animate__animated   animate__slideInLeft text-2xl animate__slower capitalize py-5">
           99 names of Allaah
         </div>
       </Link>
       <AsmaList />
-    </div>
+      </>
   );
 };
 
