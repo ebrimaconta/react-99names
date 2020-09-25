@@ -11,7 +11,9 @@
     "react-dom": "^16.8.6",
     "react-ga": "^3.1.2",
     "react-scripts": "3.0.1",
-    "tailwindcss": "^1.8.10"
+    "react-tooltip": "^4.2.10",
+    "tailwindcss": "^1.8.10",
+    "tooltip": "^1.6.1"
   },
   "scripts": {
     "start": "react-scripts start",

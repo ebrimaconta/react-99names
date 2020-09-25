@@ -12,17 +12,19 @@ function RenderNames() {
   return (
     <div className="div">
         <header className="bg-space text-white  flex flex-col items-center  h-full content-center justify-center">
-          <div className="title-99-names capitalize text-3xl pt-10 animate__animated animate__fadeInDownBig ">
+         <div className="text-center">
+         <div className="title-99-names capitalize text-3xl pt-10 animate__animated animate__fadeInDownBig ">
            99 authentic names of Allah
           </div>
           <div className="author capitalize text-2xl   animate__animated animate__fadeInUp animate__slower">
           Sheikh Ibn ‘Uthaymeen Rahimahullah
           </div>
           <a href={Pdf} className="my-10" rel="noopener noreferrer" target="_blank">
-            <div className=" animate__animated capitalize animate__fadeInLeft  animate__slower py-3  bg-black px-5">
+            <div className=" animate__animated capitalize animate__fadeInLeft  animate__slower py-3  bg-black px-5 my-10 text-2xl">
               99 names of Allaah PDF
             </div>
           </a>
+          </div>
         </header>
       <Link to="/asmaquran">
         <div className="bg-space-red text-center text-white h-20 flex items-center justify-center   animate__animated   animate__slideInRight animate__slower  text-2xl capitalize py-5">
