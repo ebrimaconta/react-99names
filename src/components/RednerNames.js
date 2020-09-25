@@ -11,7 +11,7 @@ function RenderNames() {
   });
   return (
     <>
-        <header className="bg-space-blue text-white h-full  flex flex-col items-center content-center justify-center pb-10">
+        <header className="bg-space-blue overflow-hidden text-white h-full  flex flex-col items-center content-center justify-center pb-10">
          <div className="text-center">
          <div className="title-99-names capitalize text-3xl pt-10 animate__animated animate__fadeInDownBig ">
            99 authentic names of Allah
@@ -26,8 +26,8 @@ function RenderNames() {
           </a>
           </div>
        
-      <Link to="/asmaquran">
-        <div className="bg-space-red  lg:w-lg-sm text-center text-white h-20 flex items-center justify-center   animate__animated   animate__slideInRight animate__slower  text-2xl capitalize py-5">
+      <Link to="/asmaquran" className="contents">
+        <div className="bg-space-red w-56  w-sm-xs lg:w-lg-sm text-center text-white h-20 flex items-center justify-center   animate__animated   animate__slideInRight animate__slower  text-2xl capitalize p-16">
           Asma Quran (Names of the Quran)
         </div>
       </Link>

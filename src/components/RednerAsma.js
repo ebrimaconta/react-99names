@@ -10,7 +10,7 @@ function RenderAsma() {
   });
   return (
     <>
-      <header className="bg-space-red text-white h-full  flex flex-col items-center content-center justify-center pb">
+      <header className="bg-space-red overflow-hidden text-white h-full  flex flex-col items-center content-center justify-center pb">
         <div className="title-99-names capitalize text-3xl pt-10 animate__animated animate__fadeInDownBig ">
           Asma quran
         </div>
@@ -19,7 +19,7 @@ function RenderAsma() {
         </div>
 
         <Link to="/" className="">
-          <div className="w-lg-xs bg-space-blue text-center text-white h-20 flex items-center justify-center  animate__animated   animate__slideInLeft text-2xl animate__slower capitalize py-5">
+          <div className="w-lg-sm bg-space-blue text-center text-white h-20 flex items-center justify-center  animate__animated   animate__slideInLeft text-2xl animate__slower capitalize py-5">
             99 names of Allaah
           </div>
         </Link>

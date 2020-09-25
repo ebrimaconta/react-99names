@@ -10,6 +10,7 @@ module.exports = {
         "lg-xs": "24rem",
       },
       width: {
+        "sm-xs": "20em",
         "lg-xs": "24rem",
         "lg-sm": "29rem",
       },
