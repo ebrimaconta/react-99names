@@ -4,7 +4,15 @@ import { connect } from "react-redux";
 import { faSort } from "@fortawesome/free-solid-svg-icons"; */
 import "../assets/css/style.css";
 
-class AsmaList extends Component {
+
+type AsmaListProps = {
+  Sort99names: any[]
+};
+
+class AsmaList extends Component<AsmaListProps> {
+
+
+
   rednerList() {
     return this.props.Sort99names.map((name, index) => {
       return (
@@ -18,6 +26,8 @@ class AsmaList extends Component {
       );
     });
   }
+
+
   render() {
     return (
       <>
@@ -35,13 +45,13 @@ class AsmaList extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return {
     Sort99names: state.Sort99names,
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch: any) {
   let payload = "asc";
   return {
     SortFunc: function () {

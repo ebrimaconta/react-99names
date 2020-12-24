@@ -5,7 +5,12 @@ import "../assets/css/style.css";
 import "../dist/style.css";
 import "../assets/css/flip.css";
 
-class AsmaList extends Component {
+type AsmaListProps = {
+  asmaquran: any[]
+};
+
+class AsmaList extends Component<AsmaListProps> {
+
   rednerList() {
     return this.props.asmaquran.map((name, index) => {
       return (
@@ -38,7 +43,7 @@ class AsmaList extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   return {
     asmaquran: state.asmaquran,
   };

@@ -3,7 +3,7 @@ import React, {useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 import NamesList from "../containers/99names";
-import Pdf from "../pdf/99-names-new.pdf";
+
 
 function RenderNames() {
   useEffect(() => {
@@ -19,7 +19,7 @@ function RenderNames() {
           <div className="author capitalize text-2xl   animate__animated animate__fadeInUp animate__slower">
           Sheikh Ibn ‘Uthaymeen Rahimahullah
           </div>
-          <a href={Pdf} className="my-10" rel="noopener noreferrer" target="_blank">
+          <a href="pdf/99-names-new.pdf" className="my-10" rel="noopener noreferrer" target="_blank">
             <div className=" animate__animated capitalize animate__fadeInLeft  animate__slower py-3  bg-black px-5 my-10 text-2xl">
               99 names of Allaah PDF
             </div>

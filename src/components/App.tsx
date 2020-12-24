@@ -5,9 +5,9 @@ import "../assets/css/style.css";
 import "./../../node_modules/animate.css/animate.min.css";
 import "../dist/style.css";
 
-import RenderNames from "../components/RednerNames";
-import RenderAsma from "../components/RednerAsma";
-import NotFound from "../components/NotFound";
+import RenderNames from "./RednerNames";
+import RenderAsma from "./RednerAsma";
+import NotFound from "./NotFound";
 
 
 class Main extends Component {
