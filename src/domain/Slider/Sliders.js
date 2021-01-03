@@ -6,7 +6,7 @@ const images = [];
 for (let i = 1; i < 101; i++) {
   images.push(require(`../../assets/image/names/names(${i}).jpg`));
 }
-const Slideshow = () => {
+const Silder = () => {
   const properties = {
     arrows: true,
 
@@ -43,4 +43,4 @@ const Slideshow = () => {
   );
 };
 
-export default Slideshow;
+export default Silder;
