@@ -8,7 +8,7 @@ function RenderAsma() {
   });
   return (
     <>
-      <div className="text-white  h-full flex flex-col items-center h-40 content-center justify-center ">
+      <div className="text-white  h-full flex flex-col items-center  content-center justify-center ">
         <div className="text-center  w-full  h-48 bg-space-blue-blue-blue-blue-blue-blue-blue-blue-green pb-10">
           <div className="text-4xl capitalize animate__jackInTheBox  animate__animated animate__slow">404 error</div>
           <div className="text-3xl capitalize pt-10 animate__flipInX animate__animated  animate__slow " >
