@@ -1,0 +1,73 @@
+@import '/media';
+@font-face {
+    font-family: 'italian';
+    src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+}
+
+.italian-font {
+    font-family: italian;
+}
+
+.react-slideshow-container .default-nav {
+    background-color: #FFD001;
+    color: white;
+}
+
+.center-slider {
+    margin: 0 auto;
+    width: 500px;
+}
+
+.bg-bngold {
+    background-image: url("../image/black-gold.jpg");
+    background-size: cover;
+}
+
+.bg-space-blue {
+    background-image: url("../image/background-space.jpeg");
+    background-size: cover;
+}
+
+.bg-space-red {
+    background-image: url("../image/space-red.jpg");
+    background-size: cover;
+}
+
+.bg-space-green {
+    background-image: url("../image/space-green.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.pattern-one {
+    background-image: url(../image/99namesImage_3.jpg);
+    background-repeat: repeat;
+}
+
+.pattern-two {
+    background-image: url(../image/asmaquran.jpg);
+    padding-top: 10px;
+    background-size: cover;
+}
+
+.contents {
+    display: contents;
+}
+
+.asmaquran {
+    display: inline-block;
+}
+
+.pattern-one {
+    background-image: url(../image/99namesImage_3.jpg);
+    color: black;
+    background-repeat: repeat
+}
+
+.pattern-two {
+    background-image: url(../image/asmaquran.jpg);
+    background-size: cover;
+}

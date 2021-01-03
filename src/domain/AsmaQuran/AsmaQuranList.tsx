@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import '../../assets/css/style.css';
-import '../../dist/style.css';
 import '../../assets/css/flip.css';
 
 type AsmaListProps = {

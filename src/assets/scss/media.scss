@@ -1,0 +1,30 @@
+@media only screen and (min-width: 768px) and (max-width: 845px) {
+    .box {
+        width: 35vw;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .box {
+        width: 35vw;
+        margin-right: 2vw;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .box {
+        width: 40vw;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .box {
+        width: 30vw;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .box {
+        width: 59vw;
+    }
+}

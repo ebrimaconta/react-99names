@@ -31,11 +31,18 @@ function RenderNames() {
         </div>
 
         <Link to='/asmaquran' className='contents'>
-          <div className='bg-space-red w-56  w-sm-xs lg:w-lg-sm text-center text-white h-20 flex items-center justify-center   animate__animated   animate__slideInRight animate__slower  text-2xl capitalize p-16'>
+          <div className='bg-space-red w-sm-xs lg:w-lg-sm text-center text-white h-20 flex items-center justify-center   animate__animated   animate__slideInRight animate__slower  text-2xl capitalize p-16'>
             Asma Quran (Names of the Quran)
           </div>
         </Link>
       </header>
+      <div className='flex justify-center mt-10'>
+        <Link to='/slider' className='contents'>
+          <div className='bg-black text-gd  w-20   text-center   h-16 flex items-center justify-center italian-font  border-solid border-2   border-gd  text-2xl capitalize py-10 px-16'>
+            Slider
+          </div>
+        </Link>
+      </div>
       <NamesList />
     </>
   );

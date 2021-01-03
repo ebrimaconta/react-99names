@@ -4,17 +4,15 @@ import './index.css';
 import Main from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import store from "./reducers/store";
+import store from './reducers/store';
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-139972905-1');
 
-ReactDOM.render( <
-    Provider store = { store } >
-    <
-    Main / >
-    <
-    /Provider>, 
-    document.getElementById('root')
+ReactDOM.render(
+  <Provider store={store}>
+    <Main />
+  </Provider>,
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

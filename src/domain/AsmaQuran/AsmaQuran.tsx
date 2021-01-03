@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import AsmaList from './AsmaQuranList';
 
-function RenderAsma() {
+const RenderAsma = () => {
   useEffect(() => {
     document.title = 'Asma Quran - Names of Quran';
   });
@@ -23,10 +23,11 @@ function RenderAsma() {
             99 names of Allaah
           </div>
         </Link>
+        
       </header>
       <AsmaList />
     </>
   );
-}
+};
 
 export default RenderAsma;
