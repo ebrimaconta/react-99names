@@ -9,7 +9,7 @@ import RenderNames from './domain/Main';
 import RenderAsma from './domain/AsmaQuran/AsmaQuran';
 import Slider from './domain/Slider/Sliders';
 import NotFound from './domain/NotFound/NotFound';
-import '../node_modules/react-slideshow-image/dist/styles.css';
+import '../src/package/react-slideshow-master/src/css/styles.css';
 class Main extends Component {
   render() {
     return (
