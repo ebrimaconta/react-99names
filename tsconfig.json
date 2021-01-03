@@ -16,5 +16,5 @@
     "jsx": "preserve"
   },
   "include": ["src"],
-  "exclude": ["src/domain/Slider"]
+  "exclude": ["src/domain/Slider", "node_modules"]
 }
