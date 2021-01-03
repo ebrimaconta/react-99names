@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -16,5 +16,14 @@
     "jsx": "preserve"
   },
   "include": ["src"],
-  "exclude": ["src/domain/Slider", "node_modules"]
+  "exclude": ["pdf", "node_modules", "build"],
+  "noImplicitAny": true,
+  "strictNullChecks": true,
+  "noImplicitThis": true,
+  "alwaysStrict": true,
+  "strict": true,
+  "noUnusedLocals": true,
+  "noUnusedParameters": true,
+  "noImplicitReturns": true,
+  "noFallthroughCasesInSwitch": true
 }
