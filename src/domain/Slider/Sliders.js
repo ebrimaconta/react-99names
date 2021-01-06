@@ -1,13 +1,15 @@
 import * as React from 'react';
-import Zoom  from '../../package/react-slideshow-master/src/zoom';
+import ImageGallery from 'react-image-gallery';
 import { Link } from 'react-router-dom';
 
 const images = [];
 for (let i = 1; i < 101; i++) {
-  images.push(require(`../../assets/image/names/names(${i}).jpg`));
+  images.push({
+    original: require(`../../assets/image/names/names(${i}).jpg`),
+  });
 }
 const Silder = () => {
-  const properties = {
+  /* const properties = {
     arrows: true,
     easing: 'ease',
     indicators: (i) => (
@@ -15,7 +17,7 @@ const Silder = () => {
         {i + 1}{' '}
       </div>
     ),
-  };
+  }; */
   console.log(images);
   return (
     <div className='bg-black'>
@@ -24,20 +26,7 @@ const Silder = () => {
           Back to Homepage
         </div>
       </Link>
-      <div className='w-2/3 center-slider '>
-        <div className=' slide-container    '>
-          <Zoom {...properties}>
-            {images.map((each, index) => (
-              <img
-                key={index}
-                alt=''
-                className='w-2/3 h-full center-slider '
-                src={each}
-              />
-            ))}
-          </Zoom>
-        </div>
-      </div>
+      <div className='     '>{<ImageGallery items={images} />}</div>
     </div>
   );
 };
