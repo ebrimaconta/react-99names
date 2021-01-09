@@ -18,7 +18,7 @@ const Silder = () => {
         </div>
       </Link>
       <div className=''>
-        {<ImageGallery items={images} autoPlay={true} slideInterval={3500} />}
+        {<ImageGallery items={images} autoPlay={true} slideInterval={5000} />}
       </div>
     </div>
   );
