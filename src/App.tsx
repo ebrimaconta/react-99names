@@ -11,6 +11,9 @@ import RenderAsma from './domain/AsmaQuran/AsmaQuran';
 import Slider from './domain/Slider/Sliders';
 import NotFound from './domain/NotFound/NotFound';
 import '../src/package/react-slideshow-master/src/css/styles.css';
+import { hotjar } from 'react-hotjar';
+hotjar.initialize(2188273, 6);
+
 class Main extends Component {
   render() {
     return (
