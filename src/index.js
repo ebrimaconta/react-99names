@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import store from './reducers/store';
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-139972905-1');
-
+ReactGA.pageview(window.location.pathname + window.location.search);
 ReactDOM.render(
   <Provider store={store}>
     <Main />
