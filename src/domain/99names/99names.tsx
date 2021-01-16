@@ -32,11 +32,19 @@ class AsmaList extends Component<AsmaListProps, IState> {
 
   render() {
     const { names, results, updated } = this.state;
+    let resultStyle = ``;
     return (
       <>
         <div className='flex  flex-col justify-center  my-10'>
           <div className='text-center text-bl text-xl'>
-            {updated && `Result number of names : ${results}`}
+            {updated && (
+              <div className=''>
+                <span className='bg-bl text-white p-1  w-full mr-3'>
+                  Results <i className='fas fa-arrow-right'></i>
+                </span>
+                <span className='capitalize'>Number of Names: {results}</span>
+              </div>
+            )}
           </div>
           <div className='flex  flex-wrap justify-center  my-2'>
             {names.map((name: any, index: any) => {

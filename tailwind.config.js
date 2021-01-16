@@ -6,9 +6,6 @@ module.exports = {
     purge: [],
     theme: {
         extend: {
-            colors: {
-                bl: '#0E293E',
-            },
             height: {
                 'lg-xs': '24rem',
             },
@@ -19,6 +16,7 @@ module.exports = {
             },
             colors: {
                 gd: '#FFD001',
+                bl: '#0E293E',
             },
         },
     },
