@@ -1,36 +1,26 @@
- import store99names from "./reducers_99names";
- const intialState = store99names; 
+import store99names from './reducers_99names';
+const initialState = store99names;
 
-export default function action99names(state=intialState, action){
+export default function action99names(state = initialState, action) {
     // eslint-disable-next-line default-case
-    switch(action.type){
-        case "Sort" :
-           
-         if(action.payload === "asc"){
-        return state.slice().sort(function(a, b) {
-          var nameA = a.EnglishName.toUpperCase();var nameB = b.EnglishName.toUpperCase(); if (nameA < nameB) {
-              return 1;
-            }
-            if (nameA > nameB) {
-              return -1;
-            }
-            return 0;
-        })
-       }
-           if(action.payload === "desc") {
-           return state.slice().sort(function(a, b) {
-            var nameA = a.EnglishName.toUpperCase();var nameB = b.EnglishName.toUpperCase(); if (nameA < nameB) {
-                return -1;
-              }
-              if (nameA > nameB) {
-                return 1;
-              }
+    switch (action.type) {
+        case 'Filter':
+            let filter = Object.assign(initialState, {});
+            let pushArray = [];
+            let checkFilter = filter.filter((name) => {
+                let splitNames = name.EnglishName.split('-')[1];
+                if (splitNames) {
+                    if (action.payload.toUpperCase() === splitNames[0]) {
+                        pushArray.push(name);
+                        return pushArray;
+                    }
+                }
+            });
+            return checkFilter;
 
-              // names must be equal
-              return 0;
-          })
-         }
-       
+        case 'Reset':
+            return [...initialState];
     }
-    return state ;
+
+    return state;
 }

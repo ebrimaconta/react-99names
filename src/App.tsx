@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './assets/scss/style.scss';
 import '../node_modules/animate.css/animate.min.css';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import '../node_modules/react-image-gallery/styles/css/image-gallery.css';
 import './assets/dist/tailwind.css';
 
