@@ -1,10 +1,17 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import FilterButtonExp from '../components/FilterButton/FilterButton';
 
 import NamesList from './99names/99names';
 
 function RenderNames() {
+  let alpat = 'abcdefghijklmnopqrstuvwxyz';
+  let split = alpat.split('');
+  let [display, setDisplay] = useState(false);
+  const FilterButton = () => {
+    setDisplay(!display);
+  };
   useEffect(() => {
     document.title = '99 Names Of Allaah Azza Wa Jal By Shaykh Ibn Uthymeen ';
   });
@@ -36,8 +43,24 @@ function RenderNames() {
           </div>
         </Link>
       </header>
-      <div className='flex justify-center mt-10'>
-        <Link to='/slider' className='contents'>
+      <div className='flex justify-center flex-col  items-center'>
+        <div className='my-3' onClick={FilterButton}>
+          <i className='fas fa-filter'></i> Filter Names
+        </div>
+        {display ? (
+          <div className=' grid grid-cols-3 md:grid-cols-5 w-11/12 jusify-center gap-2 lg:flex mt-3 mb-6 lg:w-5/6'>
+            {split.map((alpabet) => {
+              return (
+                <div className='xl:mx-1 bg-space-sm w-16 h-10 justify-self-center text-white text-center pt-2 '>
+                  {alpabet}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          ''
+        )}
+        <Link to='/slider' className='contents mt-10'>
           <div className='bg-black text-gd  w-20   text-center   h-16 flex items-center justify-center italian-font  border-solid border-2   border-gd  text-2xl capitalize py-10 px-16'>
             Slider
           </div>
