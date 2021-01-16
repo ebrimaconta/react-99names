@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import PDF from '../../pdf/99-names-new.pdf';
 export interface IHeader {}
 
 export default function Header(props: IHeader) {
@@ -13,7 +14,7 @@ export default function Header(props: IHeader) {
           Sheikh Ibn ‘Uthaymeen Rahimahullah
         </div>
         <a
-          href='pdf/99-names-new.pdf'
+          href={PDF}
           className='my-10'
           rel='noopener noreferrer'
           target='_blank'
