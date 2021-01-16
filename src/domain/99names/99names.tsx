@@ -36,7 +36,7 @@ class AsmaList extends Component<AsmaListProps, IState> {
       <>
         <div className='flex  flex-col justify-center  my-10'>
           <div className='text-center text-bl text-xl'>
-            {updated && `Number of names : ${results}`}
+            {updated && `Result number of names : ${results}`}
           </div>
           <div className='flex  flex-wrap justify-center  my-2'>
             {names.map((name: any, index: any) => {
