@@ -5,7 +5,7 @@ export interface IHeader {}
 
 export default function Header(props: IHeader) {
   return (
-    <header className='bg-space-blue overflow-hidden text-white h-full  flex flex-col items-center content-center justify-center pb-10'>
+    <header className='bg-space-blue  min-w-full overflow-hidden text-white h-full  flex flex-col items-center content-center justify-center pb-10'>
       <div className='text-center'>
         <div className='title-99-names capitalize text-3xl pt-10 animate__animated animate__fadeInDownBig '>
           99 authentic names of Allah

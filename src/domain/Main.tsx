@@ -8,16 +8,27 @@ import NamesList from './99names/99names';
 type IRenderNames = {
   FilterAlp: (payload: any) => void;
   Reset: (payload: any) => void;
+  GetAmountNoneNames(): any;
 };
-
+type NamesProps = {
+  Sort99names: any[];
+};
+type Props = IRenderNames & NamesProps;
 interface IFilterAlp {
   FilterAlp: (payload: any) => void;
   Reset: (payload: any) => void;
+  GetAmountNoneNames(): any;
 }
-function RenderNames(props: IRenderNames) {
-  let alpat = 'abcdefghijklmnopqrstuvwxyz';
-  let split = alpat.split('');
+function RenderNames(props: Props) {
+  let alphabetChar = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  let removeChar = 'ceopuvxyz'.split('');
+
+  let vaildAlphabet = alphabetChar.filter(
+    (item) => removeChar.indexOf(item) == -1
+  );
+
   let [display, setDisplay] = useState(false);
+
   const FilterButton = () => {
     setDisplay(!display);
   };
@@ -25,35 +36,67 @@ function RenderNames(props: IRenderNames) {
   useEffect(() => {
     document.title = '99 Names Of Allaah Azza Wa Jal By Shaykh Ibn Uthymeen ';
   });
+
   return (
     <>
       <HeaderMain />
       <div className='flex justify-center flex-col  items-center'>
         <div className='flex text-xl  '>
-          <div className='my-3' onClick={FilterButton}>
+          <div
+            className='my-3'
+            onClick={() => {
+              FilterButton();
+              props.GetAmountNoneNames();
+            }}
+          >
             <i className='fas ligthen-blue fa-filter'></i> Filter Names
           </div>
           {display ? (
             <div className='my-3 ml-3' onClick={props.Reset}>
-              <i className='fas ligthen-blue  fa-sync-alt'></i> Reset Names
+              <i className='fas ligthen-blue  fa-sync-alt fa-rotate-90'></i>{' '}
+              Reset Names
             </div>
           ) : (
             ''
           )}
         </div>
         {display ? (
-          <div className=' grid grid-cols-3 md:grid-cols-5 w-11/12 jusify-center gap-2 lg:flex mt-3 mb-6 lg:w-5/6'>
-            {split.map((alpabet) => {
-              return (
-                <div
-                  key={alpabet}
-                  onClick={() => props.FilterAlp(alpabet)}
-                  className='filter-1 space-bg-blue xl:mx-1 text-blue  w-16 h-10 justify-self-center   text-center pt-2 '
-                >
-                  <span>{alpabet} </span>
+          <div className=''>
+            <div className='flex flex-col items-center'>
+              <div className=' grid grid-cols-3 md:grid-cols-5 w-4/5  gap-2 lg:flex mt-3 mb-6 '>
+                {vaildAlphabet.map((alphabet) => {
+                  return (
+                    <div
+                      key={alphabet}
+                      onClick={() => props.FilterAlp(alphabet)}
+                      className='filter-1 space-bg-blue xl:mx-1 text-blue  w-16 h-10 justify-self-center   text-center pt-2 '
+                    >
+                      <span>{alphabet} </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className='flex flex-col items-center'>
+              <div className='flex flex-col '>
+                <div className='flex justify-center '>
+                  There are no names with{' '}
+                  <i className='fas fa-level-down-alt ml-3'></i>
                 </div>
-              );
-            })}
+                <div className='grid grid-cols-5  w-11/12  lg:flex  justify-center sm:flex flex-row   mt-3 mb-6 lg:w-full'>
+                  {removeChar.map((alphabet) => {
+                    return (
+                      <div
+                        key={alphabet}
+                        className='  bg-gray-700     text-white  w-16 h-10 justify-self-center   text-center pt-2 '
+                      >
+                        <span>{alphabet} </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           ''
@@ -68,6 +111,11 @@ function RenderNames(props: IRenderNames) {
     </>
   );
 }
+function mapStateToProps(state: any) {
+  return {
+    Sort99names: state.Sort99names,
+  };
+}
 
 function mapDispatchToProps(dispatch: any) {
   return {
@@ -77,6 +125,13 @@ function mapDispatchToProps(dispatch: any) {
     Reset: function (payload: any) {
       dispatch({ type: 'Reset' });
     },
+    GetAmountNoneNames: function () {
+      dispatch({ type: 'Names that are null' });
+      return null;
+    },
   };
 }
-export default connect<{}, IFilterAlp>(null, mapDispatchToProps)(RenderNames);
+export default connect<NamesProps, IFilterAlp>(
+  mapStateToProps,
+  mapDispatchToProps
+)(RenderNames);

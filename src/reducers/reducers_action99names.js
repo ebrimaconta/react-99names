@@ -20,6 +20,24 @@ export default function action99names(state = initialState, action) {
 
         case 'Reset':
             return [...initialState];
+        case 'Names that are null':
+            let checkNull = Object.assign(initialState, {});
+            let alpat = 'abcdefghijklmnopqrstuvwxyz';
+            let splitAlpat = alpat.split('');
+
+            let arrNames = checkNull.map((name) => {
+                let splitNames = name.EnglishName.split('-')[1];
+                if (splitNames !== undefined) {
+                    return splitNames[0].toLowerCase();
+                }
+            });
+            let uniqueNames = [...new Set(arrNames)];
+
+            let getNullValues = splitAlpat.filter(
+                (item) => uniqueNames.indexOf(item) === -1
+            );
+
+            return getNullValues;
     }
 
     return state;

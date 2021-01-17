@@ -32,7 +32,7 @@ class AsmaList extends Component<AsmaListProps, IState> {
 
   render() {
     const { names, results, updated } = this.state;
-    let resultStyle = ``;
+
     return (
       <>
         <div className='flex  flex-col justify-center  my-10'>
@@ -76,18 +76,4 @@ function mapStateToProps(state: any) {
   };
 }
 
-function mapDispatchToProps(dispatch: any) {
-  let payload = 'asc';
-  return {
-    SortFunc: function () {
-      if (payload === 'asc') {
-        payload = 'desc';
-        dispatch({ type: 'Sort', payload });
-      } else if (payload === 'desc') {
-        payload = 'asc';
-        dispatch({ type: 'Sort', payload });
-      }
-    },
-  };
-}
-export default connect(mapStateToProps, mapDispatchToProps)(AsmaList);
+export default connect(mapStateToProps)(AsmaList);
