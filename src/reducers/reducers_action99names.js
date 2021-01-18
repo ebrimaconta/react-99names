@@ -20,10 +20,27 @@ export default function action99names(state = initialState, action) {
 
         case 'Reset':
             return [...initialState];
+        case 'Sort':
+            let newSort = Object.assign(initialState, {});
+
+            let sorted = newSort.sort((a, b) => {
+                let nameA = a.EnglishName.split('-')[1];
+                let nameB = b.EnglishName.split('-')[1];
+
+                if (nameA < nameB) {
+                    return 1;
+                }
+                if (nameA > nameB) {
+                    return -1;
+                }
+                return 0;
+            });
+            console.log(sorted);
+            return sorted;
+
         case 'Names that are null':
             let checkNull = Object.assign(initialState, {});
-            let alpat = 'abcdefghijklmnopqrstuvwxyz';
-            let splitAlpat = alpat.split('');
+            let alphat = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
             let arrNames = checkNull.map((name) => {
                 let splitNames = name.EnglishName.split('-')[1];
@@ -33,7 +50,7 @@ export default function action99names(state = initialState, action) {
             });
             let uniqueNames = [...new Set(arrNames)];
 
-            let getNullValues = splitAlpat.filter(
+            let getNullValues = alphat.filter(
                 (item) => uniqueNames.indexOf(item) === -1
             );
 

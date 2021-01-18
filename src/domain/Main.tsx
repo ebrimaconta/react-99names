@@ -68,7 +68,20 @@ function RenderNames(props: Props) {
                   return (
                     <div
                       key={alphabet}
-                      onClick={() => props.FilterAlp(alphabet)}
+                      onClick={() => {
+                        props.FilterAlp(alphabet);
+                        if (window.innerWidth <= 600) {
+                          window.scrollTo({
+                            top: 1000,
+                            behavior: 'smooth',
+                          });
+                        } else {
+                          window.scrollTo({
+                            top: 740,
+                            behavior: 'smooth',
+                          });
+                        }
+                      }}
                       className='filter-1 space-bg-blue xl:mx-1 text-blue  w-16 h-10 justify-self-center   text-center pt-2 '
                     >
                       <span>{alphabet} </span>
@@ -123,7 +136,7 @@ function mapDispatchToProps(dispatch: any) {
       dispatch({ type: 'Filter', payload });
     },
     Reset: function (payload: any) {
-      dispatch({ type: 'Reset' });
+      dispatch({ type: 'Sort' });
     },
     GetAmountNoneNames: function () {
       dispatch({ type: 'Names that are null' });
