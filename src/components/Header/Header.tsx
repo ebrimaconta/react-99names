@@ -1,11 +1,23 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import PDF from '../../pdf/99-names-new.pdf';
+import { GoogleLogin } from 'react-google-login';
 export interface IHeader {}
 
+const responseGoogle = (response: any) => {
+  console.log(response);
+};
 export default function Header(props: IHeader) {
   return (
     <header className='bg-space-blue  min-w-full overflow-hidden text-white h-full  flex flex-col items-center content-center justify-center pb-10'>
+      <GoogleLogin
+        clientId='828797582333-u80chl6f5krlj936hbpp95vk6hgmlb0n.apps.googleusercontent.com'
+        buttonText='Login'
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={'single_host_origin'}
+      />
+      ,
       <div className='text-center'>
         <div className='title-99-names capitalize text-3xl pt-10 animate__animated animate__fadeInDownBig '>
           99 authentic names of Allah
@@ -24,7 +36,6 @@ export default function Header(props: IHeader) {
           </div>
         </a>
       </div>
-
       <Link to='/asmaquran' className='contents'>
         <div className='bg-space-red w-sm-xs lg:w-lg-sm text-center text-white h-20 flex items-center justify-center   animate__animated   animate__slideInRight animate__slower  text-2xl capitalize p-16'>
           Asma Quran (Names of the Quran)

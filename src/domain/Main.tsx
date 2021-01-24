@@ -7,7 +7,7 @@ import NamesList from './99names/99names';
 
 type IRenderNames = {
   FilterAlp: (payload: any) => void;
-  Reset: (payload: any) => void;
+  Reset: () => void;
   GetAmountNoneNames(): any;
 };
 type NamesProps = {
@@ -16,7 +16,7 @@ type NamesProps = {
 type Props = IRenderNames & NamesProps;
 interface IFilterAlp {
   FilterAlp: (payload: any) => void;
-  Reset: (payload: any) => void;
+  Reset: () => void;
   GetAmountNoneNames(): any;
 }
 function RenderNames(props: Props) {
@@ -37,6 +37,19 @@ function RenderNames(props: Props) {
     document.title = '99 Names Of Allaah Azza Wa Jal By Shaykh Ibn Uthymeen ';
   });
 
+  const ScrollButton = () => {
+    if (window.innerWidth <= 600) {
+      window.scrollTo({
+        top: 1000,
+        behavior: 'smooth',
+      });
+    } else {
+      window.scrollTo({
+        top: 740,
+        behavior: 'smooth',
+      });
+    }
+  };
   return (
     <>
       <HeaderMain />
@@ -52,7 +65,13 @@ function RenderNames(props: Props) {
             <i className='fas ligthen-blue fa-filter'></i> Filter Names
           </div>
           {display ? (
-            <div className='my-3 ml-3' onClick={props.Reset}>
+            <div
+              className='my-3 ml-3'
+              onClick={() => {
+                props.Reset();
+                ScrollButton();
+              }}
+            >
               <i className='fas ligthen-blue  fa-sync-alt fa-rotate-90'></i>{' '}
               Reset Names
             </div>
@@ -70,17 +89,7 @@ function RenderNames(props: Props) {
                       key={alphabet}
                       onClick={() => {
                         props.FilterAlp(alphabet);
-                        if (window.innerWidth <= 600) {
-                          window.scrollTo({
-                            top: 1000,
-                            behavior: 'smooth',
-                          });
-                        } else {
-                          window.scrollTo({
-                            top: 740,
-                            behavior: 'smooth',
-                          });
-                        }
+                        ScrollButton();
                       }}
                       className='filter-1 space-bg-blue xl:mx-1 text-blue  w-16 h-10 justify-self-center   text-center pt-2 '
                     >
@@ -135,12 +144,11 @@ function mapDispatchToProps(dispatch: any) {
     FilterAlp: function (payload: any) {
       dispatch({ type: 'Filter', payload });
     },
-    Reset: function (payload: any) {
+    Reset: function () {
       dispatch({ type: 'Sort' });
     },
     GetAmountNoneNames: function () {
       dispatch({ type: 'Names that are null' });
-      return null;
     },
   };
 }
