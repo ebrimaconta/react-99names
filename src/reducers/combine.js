@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import asmaquranReducers from './reducers_asmaquran';
-import Sort99name from './reducers_action99names';
+import asmaquranReducers from './DataAsmaQuran';
+import Sort99names from './Data99Names';
 
 const allReducers = combineReducers({
-    asmaquran: asmaquranReducers,
-    Sort99names: Sort99name,
+    asmaquranReducers,
+    Sort99names,
 });
 
 export default allReducers;

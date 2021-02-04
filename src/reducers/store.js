@@ -1,8 +1,7 @@
- 
-import {createStore} from "redux";
- 
-import allReducers from "./combine";
+import { createStore } from 'redux';
 
-const store= createStore(allReducers);
+import allReducers from './combine';
+
+const store = createStore(allReducers);
 
 export default store;

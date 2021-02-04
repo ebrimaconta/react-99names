@@ -16,6 +16,14 @@ export default function Header(props: IHeader) {
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
         cookiePolicy={'single_host_origin'}
+        render={(renderProps) => (
+          <button
+            onClick={renderProps.onClick}
+            className='button btn-transparent rounded-capsule LoginGoogle'
+          >
+            Sign in with Google
+          </button>
+        )}
       />
       ,
       <div className='text-center'>

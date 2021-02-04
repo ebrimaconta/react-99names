@@ -142,13 +142,13 @@ function mapStateToProps(state: any) {
 function mapDispatchToProps(dispatch: any) {
   return {
     FilterAlp: function (payload: any) {
-      dispatch({ type: 'Filter', payload });
+      dispatch({ type: 'FILTER', payload });
     },
     Reset: function () {
       dispatch({ type: 'Sort' });
     },
     GetAmountNoneNames: function () {
-      dispatch({ type: 'Names that are null' });
+      dispatch({ type: 'NAMES_NULL' });
     },
   };
 }

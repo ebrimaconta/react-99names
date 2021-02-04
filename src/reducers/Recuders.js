@@ -1,10 +1,10 @@
-import store99names from './reducers_99names';
+import store99names from './Data99Names';
+import { NAMES_NULL, FILTER, RESET } from '../actions/Actions';
 const initialState = store99names;
 
 export default function action99names(state = initialState, action) {
-    // eslint-disable-next-line default-case
     switch (action.type) {
-        case 'Filter':
+        case FILTER:
             let filter = Object.assign(initialState, {});
             let pushArray = [];
             let checkFilter = filter.filter((name) => {
@@ -18,27 +18,10 @@ export default function action99names(state = initialState, action) {
             });
             return checkFilter;
 
-        case 'Reset':
+        case RESET:
             return [...initialState];
-        case 'Sort':
-            let newSort = Object.assign(initialState, {});
 
-            let sorted = newSort.sort((a, b) => {
-                let nameA = a.EnglishName.split('-')[1];
-                let nameB = b.EnglishName.split('-')[1];
-
-                if (nameA < nameB) {
-                    return 1;
-                }
-                if (nameA > nameB) {
-                    return -1;
-                }
-                return 0;
-            });
-            console.log(sorted);
-            return sorted;
-
-        case 'Names that are null':
+        case NAMES_NULL:
             let checkNull = Object.assign(initialState, {});
             let alphat = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
