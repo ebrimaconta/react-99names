@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import db from '../../firebase/firebaseConfig';
+ 
 
 type AsmaListProps = {
   Sort99names: any[];
@@ -32,7 +34,7 @@ class AsmaList extends Component<AsmaListProps, IState> {
 
   render() {
     const { names, results, updated } = this.state;
-    console.log(this.props);
+
     return (
       <>
         <div className='flex  flex-col justify-center  my-10'>

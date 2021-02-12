@@ -4,6 +4,23 @@
     src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
 }
 
+.min-w {
+    min-width: 21rem;
+}
+
+.line {
+    height: 7px;
+    width: 160px;
+    background-color: #0E293E;
+    position: absolute;
+    bottom: 0;
+}
+
+.bb {
+    border-bottom: 5px #0E293E solid;
+    padding-bottom: 10px;
+}
+
 .space-bg-blue {
     background-color: #0E293E;
     color: white;
@@ -42,7 +59,7 @@
 }
 
 .bg-space-sm {
-    background-image: url("../image/bg-space-small.jpg");
+    background-image: url("../image/flowers.jpg");
 }
 
 .italian-font {
@@ -65,13 +82,15 @@
 }
 
 .bg-space-blue {
-    background-image: url("../image/background-space.jpeg");
+    background-image: url("../image/flowers.jpg");
     background-size: cover;
+    height: 18rem;
 }
 
 .bg-space-red {
     background-image: url("../image/space-red.jpg");
     background-size: cover;
+    height: 18rem;
 }
 
 .bg-space-green {
@@ -84,12 +103,12 @@
 }
 
 .pattern-one {
-    background-image: url(../image/99namesImage_3.jpg);
+    background-image: url("../image/99namesImage_3.jpg");
     background-repeat: repeat;
 }
 
 .pattern-two {
-    background-image: url(../image/asmaquran.jpg);
+    background-image: url("../image/asmaquran.jpg");
     padding-top: 10px;
     background-size: cover;
 }

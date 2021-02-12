@@ -1,54 +1,47 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PDF from '../../pdf/99-names-new.pdf';
-import { GoogleLogin } from 'react-google-login';
-export interface IHeader {}
 
-const responseGoogle = (response: any) => {
-  console.log(response);
-};
+import Navbar from './NavBar/Navbar';
+
+export interface IHeader {
+  title: string;
+  pdf?: boolean;
+  author?: string;
+}
+
 export default function Header(props: IHeader) {
+  const [data, setData] = useState();
+
   return (
-    <header className='bg-space-blue  min-w-full overflow-hidden text-white h-full  flex flex-col items-center content-center justify-center pb-10'>
-      <GoogleLogin
-        clientId='828797582333-u80chl6f5krlj936hbpp95vk6hgmlb0n.apps.googleusercontent.com'
-        buttonText='Login'
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle}
-        cookiePolicy={'single_host_origin'}
-        render={(renderProps) => (
-          <button
-            onClick={renderProps.onClick}
-            className='button btn-transparent rounded-capsule LoginGoogle'
-          >
-            Sign in with Google
-          </button>
-        )}
-      />
-      ,
-      <div className='text-center'>
-        <div className='title-99-names capitalize text-3xl pt-10 animate__animated animate__fadeInDownBig '>
-          99 authentic names of Allah
+    <header className=' '>
+      <div className='text-center min-w bg-space-blue overflow-hidden text-white   flex flex-col items-center content-center justify-center py-10 h-full'>
+        <div className='title-99-names mt-3  pt-2 capitalize text-3xl animate__animated animate__fadeInDownBig '>
+          {/*  99 authentic names of Allah */}
+          {props.title}
         </div>
         <div className='author capitalize text-2xl   animate__animated animate__fadeInUp animate__slower'>
-          Sheikh Ibn ‘Uthaymeen Rahimahullah
+          {/*  Sheikh Ibn ‘Uthaymeen Rahimahullah */}
+          {props.author}
         </div>
-        <a
-          href={PDF}
-          className='my-10'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          <div className=' animate__animated capitalize animate__fadeInLeft  animate__slower py-3  bg-black px-5 my-10 text-2xl'>
-            99 names of Allaah PDF
-          </div>
-        </a>
+        {props.pdf ? (
+          <a
+            href={PDF}
+            className='my-12 '
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            <div
+              className={` animate__animated capitalize animate__fadeInLeft  animate__slower py-3  bg-black px-5 my-10 text-2xl`}
+            >
+              99 names of Allaah PDF
+            </div>
+          </a>
+        ) : (
+          ''
+        )}
       </div>
-      <Link to='/asmaquran' className='contents'>
-        <div className='bg-space-red w-sm-xs lg:w-lg-sm text-center text-white h-20 flex items-center justify-center   animate__animated   animate__slideInRight animate__slower  text-2xl capitalize p-16'>
-          Asma Quran (Names of the Quran)
-        </div>
-      </Link>
+      <Navbar />
     </header>
   );
 }

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import HeaderMain from '../components/Header/Header';
+import Header from '../components/Header/Header';
 import { connect } from 'react-redux';
 import NamesList from './99names/99names';
 
@@ -52,9 +52,13 @@ function RenderNames(props: Props) {
   };
   return (
     <>
-      <HeaderMain />
-      <div className='flex justify-center flex-col  items-center'>
-        <div className='flex text-xl  '>
+      <Header
+        title=' 99 authentic names of Allah '
+        author='Sheikh Ibn ‘Uthaymeen Rahimahullah '
+        pdf={true}
+      />
+      <div className='flex justify-center flex-row mt-16  items-center'>
+        <div className='flex text-xl mr-3  '>
           <div
             className='my-3'
             onClick={() => {

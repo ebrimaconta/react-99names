@@ -9,6 +9,7 @@ type AsmaListProps = {
 
 class AsmaList extends Component<AsmaListProps> {
   rednerList() {
+   
     return this.props.asmaquran.map((name, index) => {
       return (
         <div
