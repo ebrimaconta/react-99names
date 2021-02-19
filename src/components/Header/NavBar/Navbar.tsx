@@ -7,7 +7,7 @@ export interface INavbar {
 }
 
 export default function Navbar(props: INavbar) {
-  console.log(props);
+  
   const responseGoogle = (response: any) => {
     console.log(response);
   };
@@ -25,12 +25,15 @@ export default function Navbar(props: INavbar) {
     <>
       <div className='lg:flex  relative items-center justify-center w-full text-2xl'>
         <div className='my-3  grid grid-cols-1 lg:flex  justify-center w-full self-center  '>
-          <a href='/' className={`capitalize mx-4 ${home} justify-self-center`}>
+          <a
+            href='/'
+            className={`capitalize mx-4 ${home} cp justify-self-center`}
+          >
             99 names cards
           </a>
           <a
             href='/asmaquran'
-            className={`capitalize mx-4 justify-self-center  ${aq} `}
+            className={`capitalize mx-4 justify-self-center  ${aq} cp `}
           >
             Asma Quran
           </a>

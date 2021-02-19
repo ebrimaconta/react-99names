@@ -57,64 +57,46 @@ function RenderNames(props: Props) {
         author='Sheikh Ibn ‘Uthaymeen Rahimahullah '
         pdf={true}
       />
-      <div className='flex justify-center flex-row mt-16  items-center'>
-        <div className='flex text-xl mr-3  '>
-          <div
-            className='my-3'
-            onClick={() => {
-              FilterButton();
-              props.GetAmountNoneNames();
-            }}
-          >
-            <i className='fas ligthen-blue fa-filter'></i> Filter Names
-          </div>
-          {display ? (
+      <div className='flex justify-center flex-col mt-6 items-center'>
+        <div className='flex flex-col'>
+          <div className='flex text-xl mr-3 justify-center  '>
             <div
-              className='my-3 ml-3'
+              className='my-3'
               onClick={() => {
-                props.Reset();
-                ScrollButton();
+                FilterButton();
+                props.GetAmountNoneNames();
               }}
             >
-              <i className='fas ligthen-blue  fa-sync-alt fa-rotate-90'></i>{' '}
-              Reset Names
+              <i className='fas ligthen-blue fa-filter'></i> Filter Names
             </div>
-          ) : (
-            ''
-          )}
-        </div>
-        {display ? (
-          <div className=''>
-            <div className='flex flex-col items-center'>
-              <div className=' grid grid-cols-3 md:grid-cols-5 w-4/5  gap-2 lg:flex mt-3 mb-6 '>
-                {vaildAlphabet.map((alphabet) => {
-                  return (
-                    <div
-                      key={alphabet}
-                      onClick={() => {
-                        props.FilterAlp(alphabet);
-                        ScrollButton();
-                      }}
-                      className='filter-1 space-bg-blue xl:mx-1 text-blue  w-16 h-10 justify-self-center   text-center pt-2 '
-                    >
-                      <span>{alphabet} </span>
-                    </div>
-                  );
-                })}
+            {display ? (
+              <div
+                className='my-3 ml-3'
+                onClick={() => {
+                  props.Reset();
+                  ScrollButton();
+                }}
+              >
+                <i className='fas ligthen-blue  fa-sync-alt fa-rotate-90'></i>{' '}
+                Reset Names
               </div>
-            </div>
-            <div className='flex flex-col items-center'>
-              <div className='flex flex-col '>
-                <div className='flex justify-center '>
-                  There are no names with{' '}
-                  <i className='fas fa-level-down-alt ml-3'></i>
-                </div>
-                <div className='grid grid-cols-5  w-11/12  lg:flex  justify-center sm:flex flex-row   mt-3 mb-6 lg:w-full'>
-                  {removeChar.map((alphabet) => {
+            ) : (
+              ''
+            )}
+          </div>
+          {display ? (
+            <div className=''>
+              <div className='flex flex-col items-center'>
+                <div className=' grid grid-cols-3 md:grid-cols-5 w-4/5  gap-2 lg:flex mt-3 mb-6 '>
+                  {vaildAlphabet.map((alphabet) => {
                     return (
                       <div
                         key={alphabet}
-                        className='  bg-gray-700     text-white  w-16 h-10 justify-self-center   text-center pt-2 '
+                        onClick={() => {
+                          props.FilterAlp(alphabet);
+                          ScrollButton();
+                        }}
+                        className='filter-1 space-bg-blue xl:mx-1 text-blue  w-16 h-10 justify-self-center   text-center pt-2 '
                       >
                         <span>{alphabet} </span>
                       </div>
@@ -122,17 +104,38 @@ function RenderNames(props: Props) {
                   })}
                 </div>
               </div>
+              <div className='flex flex-col items-center'>
+                <div className='flex flex-col '>
+                  <div className='flex justify-center '>
+                    There are no names with{' '}
+                    <i className='fas fa-level-down-alt ml-3'></i>
+                  </div>
+                  <div className='grid grid-cols-5  w-11/12  lg:flex  justify-center sm:flex flex-row   mt-3 mb-6 lg:w-full'>
+                    {removeChar.map((alphabet) => {
+                      return (
+                        <div
+                          key={alphabet}
+                          className='  bg-gray-700     text-white  w-16 h-10 justify-self-center   text-center pt-2 '
+                        >
+                          <span>{alphabet} </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        ) : (
-          ''
-        )}
+          ) : (
+            ''
+          )}
+        </div>
         <Link to='/slider' className='contents mt-10'>
           <div className='bg-black text-gd  w-20   text-center   h-16 flex items-center justify-center italian-font  border-solid border-2   border-gd  text-2xl capitalize py-10 px-16'>
             Slider
           </div>
         </Link>
       </div>
+
       <NamesList />
     </>
   );

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import db from '../../firebase/firebaseConfig';
- 
 
 type AsmaListProps = {
   Sort99names: any[];
@@ -61,6 +60,9 @@ class AsmaList extends Component<AsmaListProps, IState> {
                         <div className='text-4xl'> {name.ArabicName} </div>
                         <div className='text-3xl text-center px-10 py-10'>
                           {name.meaning}
+                        </div>
+                        <div className='text-3xl text-center px-10 py-10'>
+                          {name.reference}
                         </div>
                       </div>
                     </div>
