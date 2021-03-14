@@ -7,15 +7,15 @@ import NameList from './NameList';
 
 
 
-const RenderAsma = (props: any) => {
+const QuranNameList = (props: any) => {
   useEffect(() => {
-    document.title = 'Asma Quran - Names of Quran';
+    document.title = 'Quran';
   });
   return (
-    <>
-      <Header title='Asma Quran' />
-      <NameList names={props.names} />
-    </>
+      <div>
+        <Header title='Quran' />
+        <NameList names={props.names} />
+      </div>
   );
 };
 
@@ -25,5 +25,5 @@ function mapStateToProps(state: any) {
   };
 }
 
-export default connect(mapStateToProps)(RenderAsma);
+export default connect(mapStateToProps)(QuranNameList);
 
