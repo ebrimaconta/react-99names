@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { db } from '../../firebase/firebaseConfig';
+import NameCard from '../AsmaQuran/NameCard';
 
 type AsmaListProps = {
   Sort99names: any[];
@@ -22,6 +24,7 @@ class AsmaList extends Component<AsmaListProps, IState> {
   }
   componentDidUpdate(prevProps: AsmaListProps) {
     if (prevProps.Sort99names != this.props.Sort99names) {
+      console.log(this.props.Sort99names);
       this.setState({
         names: this.props.Sort99names,
         results: this.props.Sort99names.length,
@@ -48,25 +51,15 @@ class AsmaList extends Component<AsmaListProps, IState> {
           </div>
           <div className='flex  flex-wrap justify-center  my-2'>
             {names
-              ? names.map((name: any, index: any) => {
-                  return (
-                    <div
-                      className=' pattern-one w-lg-xs m-5 pt-10 md:w-1/3 '
-                      key={index}
-                    >
-                      <div className='flex flex-col items-center py-10'>
-                        <div className='text-5xl'>{name.EnglishName} </div>
-                        <div className='text-4xl'> {name.ArabicName} </div>
-                        <div className='text-3xl text-center px-10 py-10'>
-                          {name.meaning}
-                        </div>
-                        <div className='text-3xl text-center px-10 py-10'>
-                          {name.reference}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
+              ? names.map((name: any, index: number) => (
+                  <NameCard
+                    key={index}
+                    english={name.EnglishName}
+                    arabic={name.ArabicName}
+                    meaning={name.meaning}
+                    references={name.reference}
+                  />
+                ))
               : 'There no names currently being displayed'}
           </div>
         </div>

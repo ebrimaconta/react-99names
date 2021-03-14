@@ -8,7 +8,7 @@ import '../node_modules/react-image-gallery/styles/css/image-gallery.css';
 import './assets/dist/tailwind.css';
 
 import RenderNames from './domain/Main';
-import RenderAsma from './domain/AsmaQuran/AsmaQuran';
+import QuranNameList from './domain/AsmaQuran/QuranNameList';
 import Slider from './domain/Slider/Sliders';
 import NotFound from './domain/NotFound/NotFound';
 import '../src/package/react-slideshow-master/src/css/styles.css';
@@ -22,7 +22,7 @@ class Main extends Component {
         <BrowserRouter>
           <Switch>
             <Route path='/' component={RenderNames} exact />
-            <Route path='/asmaquran' component={RenderAsma} exact />
+            <Route path='/asmaquran' component={QuranNameList} exact />
             <Route path='/slider' component={Slider} exact />
             <Route component={NotFound} />
           </Switch>
