@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 
-import AsmaList from './AsmaQuranList';
+import QuranNameList from './NameList';
 
 const RenderAsma = () => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const RenderAsma = () => {
   return (
     <>
       <Header title='Asma Quran' />
-      <AsmaList />
+      <QuranNameList />
     </>
   );
 };
