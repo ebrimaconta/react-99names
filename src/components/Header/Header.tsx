@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PDF from '../../pdf/99-names-new.pdf';
+import { db, auth, googleProvider } from '../../firebase/firebaseConfig';
 
 import Navbar from './NavBar/Navbar';
 
@@ -11,17 +12,27 @@ export interface IHeader {
 }
 
 export default function Header(props: IHeader) {
-  const [data, setData] = useState();
+  const SignIn = () => {
+    auth
+      .signInWithPopup(googleProvider)
+      .then((res) => {
+        console.log(res);
+        /*   db.collection('google-users').doc('users').set({
+          id: '',
+        }); */
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   return (
-    <header className=' '>
+    <header>
       <div className='text-center min-w bg-space-blue overflow-hidden text-white   flex flex-col items-center content-center justify-center py-10 h-full'>
         <div className='title-99-names mt-3  pt-2 capitalize text-3xl animate__animated animate__fadeInDownBig '>
-          {/*  99 authentic names of Allah */}
           {props.title}
         </div>
         <div className='author capitalize text-2xl   animate__animated animate__fadeInUp animate__slower'>
-          {/*  Sheikh Ibn ‘Uthaymeen Rahimahullah */}
           {props.author}
         </div>
         {props.pdf ? (
@@ -40,6 +51,14 @@ export default function Header(props: IHeader) {
         ) : (
           ''
         )}
+        <div className='flex '>
+          <div
+            onClick={SignIn}
+            className='mx-5 bg-indigo-700 px-5 py-5 my-10 text-xl'
+          >
+            <i className='fab fa-google pr-3'></i> Sign In with Google
+          </div>
+        </div>
       </div>
       <Navbar />
     </header>

@@ -1,5 +1,5 @@
-import store99names from './Data99Names';
 import { NAMES_NULL, FILTER, RESET } from '../actions/Actions';
+import store99names from './Data99Names';
 const initialState = store99names;
 
 export default function action99names(state = initialState, action) {

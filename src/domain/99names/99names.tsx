@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import db from '../../firebase/firebaseConfig';
 
 type AsmaListProps = {
   Sort99names: any[];
