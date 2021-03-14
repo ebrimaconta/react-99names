@@ -81,6 +81,7 @@ const CardBack = styled.div`
 
     .references {
         margin-bottom: 0.5em;
+        font-size: 1.5em;
     }
 `;
 
