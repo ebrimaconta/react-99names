@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { NameCard } from './NameCard';
 
 import '../../assets/css/flip.css';
@@ -13,28 +12,22 @@ const CardList = styled.div`
   align-items: center;
 `;
 
-type AsmaListProps = {
-  asmaquran: any[];
+type NameListProps = {
+  names: any[];
 };
 
-
-class QuranNameList extends Component<AsmaListProps> {
+export default class NameList extends Component<NameListProps> {
 
   render() {
-    let cardElems = this.props.asmaquran.map((name, index) => 
-    <NameCard key={index} english={name.EnglishName} arabic={name.ArabicName} meaning={name.meaning} references={name.source}/>);
+    let cardElems = this.props.names.map((name, index) => 
+    <NameCard key={index} english={name.EnglishName} arabic={name.ArabicName} meaning={name.meaning} references={name.source} />);
 
     return (
       <CardList>
-        { cardElems}
+        { cardElems }
       </CardList>
     );
   }
 }
 
-function mapStateToProps(state: any) {
-  return {
-    asmaquran: state.asmaquran,
-  };
-}
-export default connect(mapStateToProps)(QuranNameList);
+

@@ -78,11 +78,8 @@ const CardBack = styled.div`
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
     transform: rotateY(180deg);
-
-    .references {
-        margin-bottom: 0.5em;
-        font-size: 1.5em;
-    }
+    padding: 15%;
+    font-size: 1.5em;
 `;
 
 type NameCardProp = {
@@ -100,11 +97,7 @@ export class NameCard extends Component<NameCardProp> {
     }
 
     render() {
-        
-        let referenceElems: string[] = [];
-        if(this.props.references) {
-            referenceElems = this.props.references.split(" ") || [];
-        }
+    
         return (
             <Card>
                 <CardInner>
@@ -115,9 +108,7 @@ export class NameCard extends Component<NameCardProp> {
                         <span className="meaning">{this.props.meaning}</span>
                     </CardFront>
                     <CardBack>
-                        <ul className="references">
-                         { referenceElems.map(r => <li>{r}</li>) }
-                        </ul>
+                        {this.props.references}
                     </CardBack>
                 </CardInner>
             </Card>

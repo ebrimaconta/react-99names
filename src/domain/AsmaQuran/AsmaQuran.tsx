@@ -1,20 +1,29 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
+import NameList from './NameList';
 
-import QuranNameList from './NameList';
 
-const RenderAsma = () => {
+
+
+const RenderAsma = (props: any) => {
   useEffect(() => {
     document.title = 'Asma Quran - Names of Quran';
   });
   return (
     <>
       <Header title='Asma Quran' />
-      <QuranNameList />
+      <NameList names={props.names} />
     </>
   );
 };
 
-export default RenderAsma;
+function mapStateToProps(state: any) {
+  return {
+    names: state.asmaquran,
+  };
+}
+
+export default connect(mapStateToProps)(RenderAsma);
+
