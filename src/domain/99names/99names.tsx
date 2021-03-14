@@ -24,6 +24,7 @@ class AsmaList extends Component<AsmaListProps, IState> {
   }
   componentDidUpdate(prevProps: AsmaListProps) {
     if (prevProps.Sort99names != this.props.Sort99names) {
+      console.log(this.props.Sort99names);
       this.setState({
         names: this.props.Sort99names,
         results: this.props.Sort99names.length,
@@ -49,11 +50,17 @@ class AsmaList extends Component<AsmaListProps, IState> {
             )}
           </div>
           <div className='flex  flex-wrap justify-center  my-2'>
-            {
-            names ? names.map((name: any, index: number) => 
-            <NameCard key={index} english={name.EnglishName} arabic={name.ArabicName} meaning={name.meaning} references={name.reference} />)
-              : 'There no names currently being displayed'
-            }
+            {names
+              ? names.map((name: any, index: number) => (
+                  <NameCard
+                    key={index}
+                    english={name.EnglishName}
+                    arabic={name.ArabicName}
+                    meaning={name.meaning}
+                    references={name.reference}
+                  />
+                ))
+              : 'There no names currently being displayed'}
           </div>
         </div>
       </>

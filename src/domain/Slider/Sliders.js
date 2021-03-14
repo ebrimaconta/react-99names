@@ -2,13 +2,17 @@ import * as React from 'react';
 import ImageGallery from 'react-image-gallery';
 import { Link } from 'react-router-dom';
 
+
 const images = [];
 for (let i = 1; i < 100; i++) {
   images.push({
-    original: require(`../../assets/image/names/names(${i}).jpg`),
-    thumbnail: require(`../../assets/image/names/thumbnail/names(${i}).jpg`),
+    original: require(`../../assets/image/names/names(${i}).jpg`).default,
+    thumbnail: require(`../../assets/image/names/thumbnail/names(${i}).jpg`)
+      .default,
   });
 }
+
+
 const Silder = () => {
   return (
     <div className='bg-black'>
@@ -18,7 +22,7 @@ const Silder = () => {
         </div>
       </Link>
       <div className=''>
-        {<ImageGallery items={images} autoPlay={true} slideInterval={5000} />}
+        <ImageGallery items={images} autoPlay={true} slideInterval={5000} />
       </div>
     </div>
   );

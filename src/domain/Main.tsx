@@ -2,13 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header/Header';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
+import { filterAlp } from '../actions/Actions';
 import NamesList from './99names/99names';
 
 type IRenderNames = {
   FilterAlp: (payload: any) => void;
   Reset: () => void;
   GetAmountNoneNames(): any;
+  dispatch: any;
 };
 type NamesProps = {
   Sort99names: any[];
@@ -28,7 +30,7 @@ function RenderNames(props: Props) {
   );
 
   let [display, setDisplay] = useState(false);
-
+  console.log(props);
   const FilterButton = () => {
     setDisplay(!display);
   };
@@ -50,6 +52,8 @@ function RenderNames(props: Props) {
       });
     }
   };
+
+  const dispatch = useDispatch();
   return (
     <>
       <Header
@@ -64,7 +68,6 @@ function RenderNames(props: Props) {
               className='my-3'
               onClick={() => {
                 FilterButton();
-                props.GetAmountNoneNames();
               }}
             >
               <i className='fas ligthen-blue fa-filter'></i> Filter Names
@@ -93,7 +96,7 @@ function RenderNames(props: Props) {
                       <div
                         key={alphabet}
                         onClick={() => {
-                          props.FilterAlp(alphabet);
+                          props.dispatch(filterAlp(alphabet));
                           ScrollButton();
                         }}
                         className='filter-1 space-bg-blue xl:mx-1 text-blue  w-16 h-10 justify-self-center   text-center pt-2 '
@@ -146,20 +149,4 @@ function mapStateToProps(state: any) {
   };
 }
 
-function mapDispatchToProps(dispatch: any) {
-  return {
-    FilterAlp: function (payload: any) {
-      dispatch({ type: 'FILTER', payload });
-    },
-    Reset: function () {
-      dispatch({ type: 'Sort' });
-    },
-    GetAmountNoneNames: function () {
-      dispatch({ type: 'NAMES_NULL' });
-    },
-  };
-}
-export default connect<NamesProps, IFilterAlp>(
-  mapStateToProps,
-  mapDispatchToProps
-)(RenderNames);
+export default connect<NamesProps>(mapStateToProps)(RenderNames);

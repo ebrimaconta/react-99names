@@ -1,13 +1,12 @@
-import store99names from './Data99Names';
 import { NAMES_NULL, FILTER, RESET } from '../actions/Actions';
+import store99names from './Data99Names';
 const initialState = store99names;
-
 export default function action99names(state = initialState, action) {
     switch (action.type) {
         case FILTER:
-            let filter = Object.assign(initialState, {});
+            const filterArr = Object.assign(initialState, {});
             let pushArray = [];
-            let checkFilter = filter.filter((name) => {
+            let checkFilter = filterArr.filter((name) => {
                 let splitNames = name.EnglishName.split('-')[1];
                 if (splitNames) {
                     if (action.payload.toUpperCase() === splitNames[0]) {
@@ -16,10 +15,11 @@ export default function action99names(state = initialState, action) {
                     }
                 }
             });
+
             return checkFilter;
 
         case RESET:
-            return [...initialState];
+            return initialState;
 
         case NAMES_NULL:
             let checkNull = Object.assign(initialState, {});
@@ -38,7 +38,7 @@ export default function action99names(state = initialState, action) {
             );
 
             return getNullValues;
+        default:
+            return initialState;
     }
-
-    return state;
 }
