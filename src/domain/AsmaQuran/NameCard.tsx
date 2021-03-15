@@ -17,18 +17,20 @@ type NameCardProp = {
 function NameCard(props: NameCardProp) {
   const [ids, setId] = useState<string[]>([]);
   const pathname = window.location.pathname;
+
   useEffect(() => {
     let isMounted = true; // note this flag denote mount status
     db.collection('users')
-      .doc(`${getCookie('uid')}`)
+      .doc(`${props.users?.user?.uid}`)
       .get()
       .then((doc) => {
         if (isMounted) setId(doc.data()?.names);
       });
     return () => {
       isMounted = false;
+      setId([]);
     };
-  });
+  }, [ids]);
 
   const namesArr: number[] = [];
   const addToDashboard = (id: number) => {
@@ -77,7 +79,7 @@ function NameCard(props: NameCardProp) {
       <Card>
         {props.users?.user && pathname === '/' ? (
           <>
-            {ids.length < 1 || ids?.indexOf(props.id) ? (
+            {ids?.length === 0 || ids?.indexOf(props.id) ? (
               <>
                 <div
                   className='flex justify-center change-des w-full '
