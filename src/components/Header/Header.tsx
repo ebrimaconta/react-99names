@@ -17,6 +17,7 @@ export interface User {}
 function Header(props: IHeader) {
   const dispatch = useDispatch();
   useEffect(() => {}, [props.users]);
+
   const SignIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('profile');
@@ -77,10 +78,10 @@ function Header(props: IHeader) {
         ) : (
           ''
         )}
-        {props.users ? (
+        {props.users.user ? (
           <div className='flex '>
             <div className='mx-5 bg-indigo-700 px-5 py-5 my-10 text-xl'>
-              Hello {getCookie('user')}
+              Hello {props.users.user?.displayName}
             </div>
             <div
               onClick={SignOut}
