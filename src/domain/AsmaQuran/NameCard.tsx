@@ -28,18 +28,17 @@ function NameCard(props: NameCardProp) {
       });
     return () => {
       isMounted = false;
-      setId([]);
     };
   }, [ids]);
 
   const namesArr: number[] = [];
   const addToDashboard = (id: number) => {
     db.collection('users')
-      .doc(`${getCookie('uid')}`)
+      .doc(`${props.users?.user?.uid}`)
       .get()
       .then((doc: any) => {
         namesArr.push(id);
-        const concat = namesArr.concat(doc.data().names);
+        const concat = namesArr.concat(doc.data()?.names);
         const pushData = fire.firestore.FieldValue.arrayUnion(...concat);
 
         db.collection('users')
@@ -79,7 +78,7 @@ function NameCard(props: NameCardProp) {
       <Card>
         {props.users?.user && pathname === '/' ? (
           <>
-            {ids?.length === 0 || ids?.indexOf(props.id) ? (
+            {ids?.indexOf(props.id) !== 0 ? (
               <>
                 <div
                   className='flex justify-center change-des w-full '
