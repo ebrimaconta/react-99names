@@ -77,7 +77,7 @@ function NameCard(props: NameCardProp) {
       <Card>
         {props.users.user && pathname === '/' ? (
           <>
-            {ids.indexOf(props.id) === -1 ? (
+            {ids?.indexOf(props.id) === -1 ? (
               <>
                 <div
                   className='flex justify-center change-des w-full '

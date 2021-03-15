@@ -4,13 +4,17 @@ import './index.css';
 import Main from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import store from './reducers/store';
+import { store, persistor } from './reducers/store';
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-139972905-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
+import { PersistGate } from 'redux-persist/integration/react';
+console.log(persistor);
 ReactDOM.render(
   <Provider store={store}>
-    <Main />
+    <PersistGate loading={null} persistor={persistor}>
+      <Main />
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );

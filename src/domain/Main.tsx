@@ -16,7 +16,7 @@ function RenderNames(props: NamesProps) {
   useEffect(() => {
     document.title = '99 Names Of Allaah Azza Wa Jal By Shaykh Ibn Uthymeen ';
   });
-
+  console.log(props);
   return (
     <>
       <Header

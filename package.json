@@ -25,6 +25,8 @@
         "react-scripts": "^4.0.3",
         "react-simple-image-slider": "^2.0.1",
         "react-tooltip": "^4.2.10",
+        "redux-persist": "^6.0.0",
+        "redux-thunk": "^2.3.0",
         "styled-components": "^5.2.1",
         "tailwindcss": "^1.8.10",
         "tooltip": "^1.6.1",
