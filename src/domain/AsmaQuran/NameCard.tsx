@@ -11,19 +11,24 @@ type NameCardProp = {
   references?: string;
   dboption?: any;
   id: any;
+  users?: any;
 };
 
 function NameCard(props: NameCardProp) {
   const [ids, setId] = useState<string[]>([]);
   const pathname = window.location.pathname;
-  if (getCookie('uid') !== null) {
+  useEffect(() => {
+    let isMounted = true; // note this flag denote mount status
     db.collection('users')
       .doc(`${getCookie('uid')}`)
       .get()
-      .then((doc: any) => {
-        setId(doc.data().names);
+      .then((doc) => {
+        if (isMounted) setId(doc.data()?.names);
       });
-  }
+    return () => {
+      isMounted = false;
+    };
+  });
 
   const namesArr: number[] = [];
   const addToDashboard = (id: number) => {
@@ -70,9 +75,9 @@ function NameCard(props: NameCardProp) {
   return (
     <>
       <Card>
-        {getCookie('uid') && pathname === '/' ? (
+        {props.users.user && pathname === '/' ? (
           <>
-            {ids.indexOf(props.id) ? (
+            {ids.indexOf(props.id) === -1 ? (
               <>
                 <div
                   className='flex justify-center change-des w-full '

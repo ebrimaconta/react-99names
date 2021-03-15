@@ -1,7 +1,9 @@
 import { constants } from 'buffer';
 import React from 'react';
 import { getCookie } from '../../Cookie/Cookie';
-export interface INavbar {}
+export interface INavbar {
+  user: any;
+}
 
 export default function Navbar(props: INavbar) {
   const pathname = window.location.pathname;
@@ -12,7 +14,7 @@ export default function Navbar(props: INavbar) {
     <>
       <div className='lg:flex  relative items-center justify-center w-full text-2xl'>
         <div className='my-3   grid grid-cols-1 lg:flex  justify-center w-full self-center  '>
-          {getCookie('uid') && (
+          {props.user?.user && (
             <a
               href='/dashboard'
               className={`capitalize mx-4 ${isTrue(

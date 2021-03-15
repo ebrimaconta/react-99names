@@ -60,6 +60,7 @@ class Asma99NameList extends Component<Asma99NameListProps, IState> {
                     meaning={name.meaning}
                     references={name.reference}
                     id={index}
+                    users={this.props.users}
                   />
                 ))
               : 'There no names currently being displayed'}

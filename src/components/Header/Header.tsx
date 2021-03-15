@@ -101,7 +101,7 @@ function Header(props: IHeader) {
           </div>
         )}
       </div>
-      <Navbar />
+      <Navbar user={props.users} />
     </header>
   );
 }
