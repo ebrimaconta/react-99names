@@ -1,25 +1,48 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PDF from '../../pdf/99-names-new.pdf';
-import { db, auth, googleProvider } from '../../firebase/firebaseConfig';
-
+import { firebase, googleProvider, db } from '../../firebase/firebaseConfig';
+import { connect, useDispatch } from 'react-redux';
 import Navbar from './NavBar/Navbar';
 
 export interface IHeader {
   title: string;
   pdf?: boolean;
   author?: string;
+  users: any;
 }
 
-export default function Header(props: IHeader) {
+export interface User {}
+function Header(props: IHeader) {
+  const dispatch = useDispatch();
+
   const SignIn = () => {
-    auth
+    var provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('profile');
+    provider.addScope('email');
+
+    firebase
+      .auth()
       .signInWithPopup(googleProvider)
       .then((res) => {
-        console.log(res);
-        /*   db.collection('google-users').doc('users').set({
-          id: '',
-        }); */
+        db.collection('users')
+          .doc(`${res.user?.uid}`)
+          .set({ id: res.user?.uid }, { merge: true })
+          .catch((error) => {
+            console.error('Error writing document: ', error);
+          });
+        dispatch({ type: 'GET_USER', payload: res });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  const SignOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then((res) => {
+        dispatch({ type: 'SIGNOUT' });
       })
       .catch((error) => {
         console.log(error.message);
@@ -51,16 +74,37 @@ export default function Header(props: IHeader) {
         ) : (
           ''
         )}
-        <div className='flex '>
-          <div
-            onClick={SignIn}
-            className='mx-5 bg-indigo-700 px-5 py-5 my-10 text-xl'
-          >
-            <i className='fab fa-google pr-3'></i> Sign In with Google
+        {props.users.user ? (
+          <div className='flex '>
+            <div className='mx-5 bg-indigo-700 px-5 py-5 my-10 text-xl'>
+              Hello {props.users.user?.displayName}
+            </div>
+            <div
+              onClick={SignOut}
+              className='mx-5 bg-indigo-700 px-5 py-5 my-10 text-xl'
+            >
+              Log Out
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className='flex '>
+            <div
+              onClick={SignIn}
+              className='mx-5 bg-indigo-700 px-5 py-5 my-10 text-xl'
+            >
+              <i className='fab fa-google pr-3'></i> Sign In with Google
+            </div>
+          </div>
+        )}
       </div>
-      <Navbar />
+      <Navbar dashboard={props.users.user} />
     </header>
   );
 }
+function mapStateToProps(state: any) {
+  return {
+    users: state.users,
+  };
+}
+
+export default connect(mapStateToProps)(Header);

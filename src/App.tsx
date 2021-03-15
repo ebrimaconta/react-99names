@@ -10,6 +10,7 @@ import './assets/dist/tailwind.css';
 import RenderNames from './domain/Main';
 import QuranNameList from './domain/AsmaQuran/QuranNameList';
 import Slider from './domain/Slider/Sliders';
+import Dashboard from './domain/Dashboard/Dashboard';
 import NotFound from './domain/NotFound/NotFound';
 import '../src/package/react-slideshow-master/src/css/styles.css';
 import { hotjar } from 'react-hotjar';
@@ -24,6 +25,7 @@ class Main extends Component {
             <Route path='/' component={RenderNames} exact />
             <Route path='/asmaquran' component={QuranNameList} exact />
             <Route path='/slider' component={Slider} exact />
+            <Route path='/dashboard' component={Dashboard} exact />
             <Route component={NotFound} />
           </Switch>
         </BrowserRouter>

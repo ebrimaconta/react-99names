@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { db } from '../../firebase/firebaseConfig';
 import NameCard from '../AsmaQuran/NameCard';
 
-type AsmaListProps = {
+type Asma99NameListProps = {
   Sort99names: any[];
+  users: any;
 };
 
 type IState = {
@@ -13,7 +14,7 @@ type IState = {
   updated: boolean;
 };
 
-class AsmaList extends Component<AsmaListProps, IState> {
+class Asma99NameList extends Component<Asma99NameListProps, IState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -22,9 +23,8 @@ class AsmaList extends Component<AsmaListProps, IState> {
       updated: false,
     };
   }
-  componentDidUpdate(prevProps: AsmaListProps) {
+  componentDidUpdate(prevProps: Asma99NameListProps) {
     if (prevProps.Sort99names != this.props.Sort99names) {
-      console.log(this.props.Sort99names);
       this.setState({
         names: this.props.Sort99names,
         results: this.props.Sort99names.length,
@@ -52,13 +52,17 @@ class AsmaList extends Component<AsmaListProps, IState> {
           <div className='flex  flex-wrap justify-center  my-2'>
             {names
               ? names.map((name: any, index: number) => (
-                  <NameCard
-                    key={index}
-                    english={name.EnglishName}
-                    arabic={name.ArabicName}
-                    meaning={name.meaning}
-                    references={name.reference}
-                  />
+                  <>
+                    <NameCard
+                      key={index}
+                      users={this.props.users}
+                      english={name.EnglishName}
+                      arabic={name.ArabicName}
+                      meaning={name.meaning}
+                      references={name.reference}
+                      id={index}
+                    />
+                  </>
                 ))
               : 'There no names currently being displayed'}
           </div>
@@ -71,7 +75,8 @@ class AsmaList extends Component<AsmaListProps, IState> {
 function mapStateToProps(state: any) {
   return {
     Sort99names: state.Sort99names,
+    users: state.users,
   };
 }
 
-export default connect(mapStateToProps)(AsmaList);
+export default connect(mapStateToProps)(Asma99NameList);

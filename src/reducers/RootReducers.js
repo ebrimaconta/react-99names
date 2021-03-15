@@ -1,9 +1,8 @@
-import { NAMES_NULL, FILTER, RESET } from '../actions/Actions';
 import store99names from './Data99Names';
 const initialState = store99names;
 export default function action99names(state = initialState, action) {
     switch (action.type) {
-        case FILTER:
+        case 'FILTER':
             const filterArr = Object.assign(initialState, {});
             let pushArray = [];
             let checkFilter = filterArr.filter((name) => {
@@ -18,26 +17,9 @@ export default function action99names(state = initialState, action) {
 
             return checkFilter;
 
-        case RESET:
+        case 'RESET':
             return initialState;
 
-        case NAMES_NULL:
-            let checkNull = Object.assign(initialState, {});
-            let alphat = 'abcdefghijklmnopqrstuvwxyz'.split('');
-
-            let arrNames = checkNull.map((name) => {
-                let splitNames = name.EnglishName.split('-')[1];
-                if (splitNames !== undefined) {
-                    return splitNames[0].toLowerCase();
-                }
-            });
-            let uniqueNames = [...new Set(arrNames)];
-
-            let getNullValues = alphat.filter(
-                (item) => uniqueNames.indexOf(item) === -1
-            );
-
-            return getNullValues;
         default:
             return initialState;
     }
