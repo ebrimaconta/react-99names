@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import bgBlue from '../../assets/image/bg-blue.jpeg';
+ 
 
 export const CardFlip = styled.span`
   height: 50px;
@@ -31,7 +33,8 @@ export const Card = styled.div`
   width: 350px;
   padding: 1em;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: transparent;
+  background-image: url(${bgBlue});
+  color: white;
   border: 1px solid #f1f1f1;
   perspective: 1000px;
 

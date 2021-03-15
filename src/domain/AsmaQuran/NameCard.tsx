@@ -1,21 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardBack, CardFront, Card, CardInner } from './styledNamesCard';
 import { db } from '../../firebase/firebaseConfig';
+import { getCookie } from '../../components/Cookie/Cookie';
 import fire from 'firebase';
 type NameCardProp = {
   english: string;
   arabic: string;
   meaning: string;
   references?: string;
-  users?: any;
-  id: number;
+  dboption?: any;
+  id: any;
 };
 
 function NameCard(props: NameCardProp) {
+  const [ids, setId] = useState<string[]>([]);
+  const pathname = window.location.pathname;
+
+  useEffect(() => {
+    if (getCookie('uid') !== null) {
+      db.collection('users')
+        .doc(`${getCookie('uid')}`)
+        .get()
+        .then((doc: any) => {
+          setId(doc.data().names);
+        });
+    }
+  }, [ids]);
+
   const namesArr: number[] = [];
   const addToDashboard = (id: number) => {
     db.collection('users')
-      .doc(`${props.users.user.uid}`)
+      .doc(`${getCookie('uid')}`)
       .get()
       .then((doc: any) => {
         namesArr.push(id);
@@ -23,9 +38,31 @@ function NameCard(props: NameCardProp) {
         const pushData = fire.firestore.FieldValue.arrayUnion(...concat);
 
         db.collection('users')
-          .doc(`${props.users.user.uid}`)
+          .doc(`${getCookie('uid')}`)
           .update({
             names: pushData,
+          })
+          .catch((error) => {
+            console.error('Error writing document: ', error);
+          });
+        let getDocument = (document.getElementsByClassName('change-des')[
+          id
+        ].innerHTML = 'Check Dashboard');
+      });
+  };
+  const removeFromDB = (id: number) => {
+    db.collection('users')
+      .doc(`${getCookie('uid')}`)
+      .get()
+      .then((doc: any) => {
+        const filter = doc
+          .data()
+          .names.filter((number: number) => number !== id);
+
+        db.collection('users')
+          .doc(`${getCookie('uid')}`)
+          .update({
+            names: filter,
           })
           .catch((error) => {
             console.error('Error writing document: ', error);
@@ -35,13 +72,32 @@ function NameCard(props: NameCardProp) {
   return (
     <>
       <Card>
-        {props.users && (
-          <div
-            className='flex justify-center'
-            onClick={() => addToDashboard(props.id)}
-          >
-            Save to Dashboard
-          </div>
+        {getCookie('uid') && pathname === '/' ? (
+          <>
+            <div
+              className='flex justify-center change-des w-full '
+              onClick={() => {
+                if (ids.indexOf(props.id)) {
+                  addToDashboard(props.id);
+                }
+              }}
+            >
+              <i className='fas fa-plus pt-1 pr-3'></i>
+              {ids.indexOf(props.id) ? 'Save to Dashboard' : 'Check Dashboard'}
+            </div>
+          </>
+        ) : pathname === '/dashboard' ? (
+          <>
+            <div
+              className='flex justify-center capitalize'
+              onClick={() => removeFromDB(props.id)}
+            >
+              <i className='fas fa-minus pt-2 pr-3'></i>
+              Remove from dashboard
+            </div>
+          </>
+        ) : (
+          ''
         )}
 
         <CardInner>

@@ -52,17 +52,15 @@ class Asma99NameList extends Component<Asma99NameListProps, IState> {
           <div className='flex  flex-wrap justify-center  my-2'>
             {names
               ? names.map((name: any, index: number) => (
-                  <>
-                    <NameCard
-                      key={index}
-                      users={this.props.users}
-                      english={name.EnglishName}
-                      arabic={name.ArabicName}
-                      meaning={name.meaning}
-                      references={name.reference}
-                      id={index}
-                    />
-                  </>
+                  <NameCard
+                    key={index}
+                    dboption={true}
+                    english={name.EnglishName}
+                    arabic={name.ArabicName}
+                    meaning={name.meaning}
+                    references={name.reference}
+                    id={index}
+                  />
                 ))
               : 'There no names currently being displayed'}
           </div>

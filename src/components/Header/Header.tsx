@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { eraseCookie, getCookie, setCookie } from '../Cookie/Cookie';
 import PDF from '../../pdf/99-names-new.pdf';
-import { firebase, googleProvider, db } from '../../firebase/firebaseConfig';
+import {
+  firebase,
+  googleProvider,
+  db,
+  fireauth,
+} from '../../firebase/firebaseConfig';
 import { connect, useDispatch } from 'react-redux';
 import Navbar from './NavBar/Navbar';
 
@@ -31,6 +36,9 @@ function Header(props: IHeader) {
           .catch((error) => {
             console.error('Error writing document: ', error);
           });
+        setCookie('uid', `${res.user?.uid}`, 15);
+        setCookie('user', `${res.user?.displayName}`, 15);
+
         dispatch({ type: 'GET_USER', payload: res });
       })
       .catch((error) => {
@@ -38,6 +46,8 @@ function Header(props: IHeader) {
       });
   };
   const SignOut = () => {
+    eraseCookie('uid');
+    eraseCookie('user');
     firebase
       .auth()
       .signOut()
@@ -74,10 +84,10 @@ function Header(props: IHeader) {
         ) : (
           ''
         )}
-        {props.users.user ? (
+        {getCookie('uid') ? (
           <div className='flex '>
             <div className='mx-5 bg-indigo-700 px-5 py-5 my-10 text-xl'>
-              Hello {props.users.user?.displayName}
+              Hello {getCookie('user')}
             </div>
             <div
               onClick={SignOut}
@@ -97,7 +107,7 @@ function Header(props: IHeader) {
           </div>
         )}
       </div>
-      <Navbar dashboard={props.users.user} />
+      <Navbar />
     </header>
   );
 }
