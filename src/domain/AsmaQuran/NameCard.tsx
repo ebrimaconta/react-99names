@@ -75,7 +75,7 @@ function NameCard(props: NameCardProp) {
   return (
     <>
       <Card>
-        {props.users.user && pathname === '/' ? (
+        {props.users?.user && pathname === '/' ? (
           <>
             {ids?.indexOf(props.id) === -1 ? (
               <>

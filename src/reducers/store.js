@@ -8,9 +8,6 @@ const persistConfig = {
     storage,
 };
 
-const store = createStore(
-    persistReducer(persistConfig, allReducers),
-    applyMiddleware(thunk)
-);
+const store = createStore(persistReducer(persistConfig, allReducers));
 const persistor = persistStore(store);
 export { store, persistor };

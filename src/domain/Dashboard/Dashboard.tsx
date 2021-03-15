@@ -27,7 +27,7 @@ function Dashboard(props: IDashboard) {
   return (
     <>
       <Header title='Dashboard' />
-      {props.users.user ? (
+      {props.users?.user ? (
         <div className='flex justify-center'>
           <div className='grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2'>
             {props.Sort99names.map((names: any, index: any) => {
