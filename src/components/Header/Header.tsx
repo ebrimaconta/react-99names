@@ -29,7 +29,7 @@ function Header(props: IHeader) {
       .then((res) => {
         db.collection('users')
           .doc(`${res.user?.uid}`)
-          .set({ id: res.user?.uid }, { merge: true })
+          .set({ id: res.user?.uid, names: [] }, { merge: true })
           .catch((error) => {
             console.error('Error writing document: ', error);
           });

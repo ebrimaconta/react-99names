@@ -30,29 +30,33 @@ function Dashboard(props: IDashboard) {
       {props.users?.user ? (
         <div className='flex justify-center'>
           <div className='grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2'>
-            {props.Sort99names.map((names: any, index: any) => {
-              return (
-                <React.Fragment key={index}>
-                  {namesFromStore ? (
-                    namesFromStore.indexOf(index) !== -1 && (
-                      <NameCard
-                        key={index}
-                        english={names.EnglishName}
-                        arabic={names.ArabicName}
-                        meaning={names.meaning}
-                        references={names.reference}
-                        id={index}
-                      />
-                    )
-                  ) : (
-                    <div className=''>
-                      Please go to <a href='/'>99 names</a> and click a save to
-                      dashboard to see a card appear on the dashbaord
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
+            {namesFromStore ? (
+              props.Sort99names.map((names: any, index: any) => {
+                return (
+                  namesFromStore.indexOf(index) !== -1 && (
+                    <NameCard
+                      key={index}
+                      english={names.EnglishName}
+                      arabic={names.ArabicName}
+                      meaning={names.meaning}
+                      references={names.reference}
+                      id={index}
+                    />
+                  )
+                );
+              })
+            ) : (
+              <div className='capitalize text-2xl col-span-3 mt-10 flex justify center'>
+                Please go to
+                <a
+                  href='/'
+                  className='bg-indigo-800 p-2 -mt-2 mx-3  text-white'
+                >
+                  99names
+                </a>
+                page currently there are no names on your dashboard
+              </div>
+            )}
           </div>
         </div>
       ) : (
