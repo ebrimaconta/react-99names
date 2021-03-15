@@ -3,6 +3,7 @@ import { CardBack, CardFront, Card, CardInner } from './styledNamesCard';
 import { db } from '../../firebase/firebaseConfig';
 import { getCookie } from '../../components/Cookie/Cookie';
 import fire from 'firebase';
+import { Redirect } from 'react-router';
 type NameCardProp = {
   english: string;
   arabic: string;
@@ -15,17 +16,14 @@ type NameCardProp = {
 function NameCard(props: NameCardProp) {
   const [ids, setId] = useState<string[]>([]);
   const pathname = window.location.pathname;
-
-  useEffect(() => {
-    if (getCookie('uid') !== null) {
-      db.collection('users')
-        .doc(`${getCookie('uid')}`)
-        .get()
-        .then((doc: any) => {
-          setId(doc.data().names);
-        });
-    }
-  }, [ids]);
+  if (getCookie('uid') !== null) {
+    db.collection('users')
+      .doc(`${getCookie('uid')}`)
+      .get()
+      .then((doc: any) => {
+        setId(doc.data().names);
+      });
+  }
 
   const namesArr: number[] = [];
   const addToDashboard = (id: number) => {
@@ -45,9 +43,8 @@ function NameCard(props: NameCardProp) {
           .catch((error) => {
             console.error('Error writing document: ', error);
           });
-        let getDocument = (document.getElementsByClassName('change-des')[
-          id
-        ].innerHTML = 'Check Dashboard');
+        let getDocument = document.getElementsByClassName('change-des')[id];
+        getDocument.innerHTML = `<a href='/dashboard'>Check Dashboard</a>`;
       });
   };
   const removeFromDB = (id: number) => {
@@ -74,17 +71,28 @@ function NameCard(props: NameCardProp) {
       <Card>
         {getCookie('uid') && pathname === '/' ? (
           <>
-            <div
-              className='flex justify-center change-des w-full '
-              onClick={() => {
-                if (ids.indexOf(props.id)) {
-                  addToDashboard(props.id);
-                }
-              }}
-            >
-              <i className='fas fa-plus pt-1 pr-3'></i>
-              {ids.indexOf(props.id) ? 'Save to Dashboard' : 'Check Dashboard'}
-            </div>
+            {ids.indexOf(props.id) ? (
+              <>
+                <div
+                  className='flex justify-center change-des w-full '
+                  onClick={() => {
+                    addToDashboard(props.id);
+                  }}
+                >
+                  <i className='fas fa-plus pt-1 pr-3'></i> Save to Dashboard
+                </div>
+              </>
+            ) : (
+              <>
+                <a
+                  href='/dashboard'
+                  className='flex justify-center change-des w-full '
+                >
+                  <i className='fas hover:underline fa-columns pt-1 pr-3'> </i>{' '}
+                  Check Dashboard
+                </a>
+              </>
+            )}
           </>
         ) : pathname === '/dashboard' ? (
           <>

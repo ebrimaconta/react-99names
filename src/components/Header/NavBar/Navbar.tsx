@@ -6,7 +6,7 @@ export interface INavbar {}
 export default function Navbar(props: INavbar) {
   const pathname = window.location.pathname;
   let isTrue = (name: string) => {
-    return pathname === name && 'bg-indigo-800 -mt-2 p-3 text-white';
+    return pathname === name && 'bg-indigo-800 my-3 lg:-mt-2  p-3 text-white';
   };
   return (
     <>

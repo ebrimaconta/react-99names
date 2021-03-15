@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { eraseCookie, getCookie, setCookie } from '../Cookie/Cookie';
 import PDF from '../../pdf/99-names-new.pdf';
+import { Redirect } from 'react-router';
 import {
   firebase,
   googleProvider,
