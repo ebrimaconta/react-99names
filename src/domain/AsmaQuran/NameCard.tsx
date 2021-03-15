@@ -44,6 +44,7 @@ function NameCard(props: NameCardProp) {
             console.error('Error writing document: ', error);
           });
         let getDocument = document.getElementsByClassName('change-des')[id];
+
         getDocument.innerHTML = `<a href='/dashboard'>Check Dashboard</a>`;
       });
   };

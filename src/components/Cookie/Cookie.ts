@@ -1,4 +1,4 @@
-function setCookie(name, value, days) {
+function setCookie(name:string, value:string, days:number) {
     var expires = '';
     if (days) {
         var date = new Date();
@@ -8,7 +8,7 @@ function setCookie(name, value, days) {
     document.cookie = name + '=' + (value || '') + expires + '; path=/';
 }
 
-function getCookie(name) {
+function getCookie(name:string) {
     var nameEQ = name + '=';
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
@@ -19,7 +19,7 @@ function getCookie(name) {
     return null;
 }
 
-function eraseCookie(name) {
+function eraseCookie(name:string) {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 

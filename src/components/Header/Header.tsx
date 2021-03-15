@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { eraseCookie, getCookie, setCookie } from '../Cookie/Cookie';
 import PDF from '../../pdf/99-names-new.pdf';
-import { Redirect } from 'react-router';
-import {
-  firebase,
-  googleProvider,
-  db,
-  fireauth,
-} from '../../firebase/firebaseConfig';
+
+import { firebase, googleProvider, db } from '../../firebase/firebaseConfig';
 import { connect, useDispatch } from 'react-redux';
 import Navbar from './NavBar/Navbar';
 
@@ -20,6 +15,8 @@ export interface IHeader {
 
 export interface User {}
 function Header(props: IHeader) {
+  const dispatch = useDispatch();
+  useEffect(() => {}, [props.users]);
   const SignIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('profile');
@@ -37,6 +34,7 @@ function Header(props: IHeader) {
           });
         setCookie('uid', `${res.user?.uid}`, 15);
         setCookie('user', `${res.user?.displayName}`, 15);
+        dispatch({ type: 'GET_USER', payload: res });
       })
       .catch((error) => {
         console.log(error.message);
@@ -51,6 +49,7 @@ function Header(props: IHeader) {
       .catch((error) => {
         console.log(error.message);
       });
+    dispatch({ type: 'SIGNOUT' });
   };
 
   return (
@@ -78,7 +77,7 @@ function Header(props: IHeader) {
         ) : (
           ''
         )}
-        {getCookie('uid') ? (
+        {props.users ? (
           <div className='flex '>
             <div className='mx-5 bg-indigo-700 px-5 py-5 my-10 text-xl'>
               Hello {getCookie('user')}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import { connect } from 'react-redux';
 import NameCard from '../AsmaQuran/NameCard';
@@ -11,15 +11,19 @@ type IDashboard = {
 };
 function Dashboard(props: IDashboard) {
   const [namesFromStore, setNames] = useState<string[]>([]);
-  if (getCookie !== null) {
+
+  useEffect(() => {
+    let isMounted = true; // note this flag denote mount status
     db.collection('users')
       .doc(`${getCookie('uid')}`)
       .get()
-      .then((doc: any) => {
-        setNames(doc.data().names);
+      .then((doc) => {
+        if (isMounted) setNames(doc.data()?.names);
       });
-  }
-
+    return () => {
+      isMounted = false;
+    };
+  });
   return (
     <>
       <Header title='Dashboard' />
