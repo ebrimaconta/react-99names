@@ -11,17 +11,19 @@ type IDashboard = {
 };
 function Dashboard(props: IDashboard) {
   const [namesFromStore, setNames] = useState<string[]>([]);
-  db.collection('users')
-    .doc(`${getCookie('uid')}`)
-    .get()
-    .then((doc: any) => {
-      setNames(doc.data().names);
-    });
+  if (getCookie !== null) {
+    db.collection('users')
+      .doc(`${getCookie('uid')}`)
+      .get()
+      .then((doc: any) => {
+        setNames(doc.data().names);
+      });
+  }
 
   return (
     <>
       <Header title='Dashboard' />
-      {getCookie('uid') ? (
+      {getCookie('uid') !== null ? (
         <div className='flex justify-center'>
           <div className='grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2'>
             {props.Sort99names.map((names: any, index: any) => {

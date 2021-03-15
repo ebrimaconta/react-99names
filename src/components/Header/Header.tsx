@@ -19,8 +19,6 @@ export interface IHeader {
 
 export interface User {}
 function Header(props: IHeader) {
-  const dispatch = useDispatch();
-
   const SignIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('profile');
@@ -38,8 +36,6 @@ function Header(props: IHeader) {
           });
         setCookie('uid', `${res.user?.uid}`, 15);
         setCookie('user', `${res.user?.displayName}`, 15);
-
-        dispatch({ type: 'GET_USER', payload: res });
       })
       .catch((error) => {
         console.log(error.message);
@@ -51,9 +47,6 @@ function Header(props: IHeader) {
     firebase
       .auth()
       .signOut()
-      .then((res) => {
-        dispatch({ type: 'SIGNOUT' });
-      })
       .catch((error) => {
         console.log(error.message);
       });
