@@ -22,7 +22,7 @@
         "react-google-login": "^5.2.2",
         "react-hotjar": "^2.2.1",
         "react-image-gallery": "^1.0.8",
-        "react-scripts": "^4.0.3",
+        "react-scripts": "^5.0.1",
         "react-simple-image-slider": "^2.0.1",
         "react-tooltip": "^4.2.10",
         "redux-persist": "^6.0.0",
